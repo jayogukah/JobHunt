@@ -1,0 +1,65 @@
+# Master CV as structured data. Fill this in before the first real run.
+# Anything left blank will be skipped by the renderer.
+
+identity:
+  name: ""
+  email: ""
+  phone: ""
+  location: ""
+  linkedin: ""
+  github: ""
+  portfolio: ""
+
+# 3 to 4 sentences, written in your own voice. No em dashes.
+# Avoid: leveraged, spearheaded, passionate, proven, results-driven, dynamic.
+summary: |
+
+
+# Flat list for ATS keyword hits.
+competencies:
+  - Intelligent Automation
+  - AI Agent Development
+  - RPA (UiPath, Power Automate)
+  - LLM Integration
+  - Python
+  - REST APIs
+  - SQL
+
+experience:
+  - company: ""
+    role: ""
+    location: ""
+    start: ""        # YYYY-MM
+    end: "present"   # YYYY-MM or "present"
+    bullets:
+      - ""
+    tags: []
+
+education:
+  - institution: ""
+    degree: ""
+    start: ""
+    end: ""
+    notes: ""
+
+certifications:
+  - name: ""
+    issuer: ""
+    date: ""
+    status: "active"   # active | in-progress | planned
+
+projects:
+  - name: ""
+    bullets: []
+    tags: []
+
+languages:
+  - language: "English"
+    level: "native"
+
+# Personal context used by the scorer. None of this is sent in tailored CVs.
+context:
+  current_country: ""
+  needs_sponsorship: true
+  seniority: "senior"   # junior | mid | senior | lead
+  open_to_relocation: true

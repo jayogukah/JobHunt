@@ -1,0 +1,40 @@
+# Search parameters and scoring thresholds.
+
+keywords:
+  - AI automation engineer
+  - AI agent engineer
+  - intelligent automation
+  - RPA engineer
+  - LLM engineer
+  - automation engineer
+  - AI engineer
+
+locations:
+  - remote
+  - United Kingdom
+  - Germany
+  - Netherlands
+  - Ireland
+  - Canada
+  - United States
+
+remote_ok: true
+visa_sponsorship_required: true
+
+exclude_keywords:
+  - entry level
+  - intern
+  - internship
+  - graduate program
+
+# Adzuna country codes: https://developer.adzuna.com/docs/search
+adzuna_countries: [gb, de, nl, ie, ca, us]
+
+scoring:
+  min_heuristic_score: 0.4      # drop below this before Gemini
+  top_n_for_tailoring: 7        # how many get a tailored CV per run
+  min_final_score_for_apply: 0.7
+
+# How many days to suppress a previously-scored fingerprint. Re-score only
+# if the description has changed.
+dedupe_skip_days: 14

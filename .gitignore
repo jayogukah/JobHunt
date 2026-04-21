@@ -1,0 +1,27 @@
+.env
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+*.swp
+*.swo
+
+# local IDE
+.vscode/
+.idea/
+
+# build artefacts
+build/
+dist/
+*.egg-info/
+
+# runtime state
+db/*.sqlite
+db/*.sqlite-journal

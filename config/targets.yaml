@@ -1,0 +1,26 @@
+# Named companies you care about, grouped by which ATS they use.
+# Each entry is the board token / company slug used in that ATS's public API.
+# Leave a group empty if you don't target anyone on that ATS yet.
+
+greenhouse:
+  # https://boards-api.greenhouse.io/v1/boards/{token}/jobs?content=true
+  - anthropic
+  - stripe
+  - airbnb
+
+lever:
+  # https://api.lever.co/v0/postings/{slug}?mode=json
+  - netflix
+  - shopify
+
+ashby:
+  # https://api.ashbyhq.com/posting-api/job-board/{org}?includeCompensation=true
+  - ramp
+
+workable:
+  # https://apply.workable.com/api/v1/widget/accounts/{subdomain}?details=true
+  []
+
+personio:
+  # https://{company}.jobs.personio.com/xml
+  []
