@@ -1,26 +1,82 @@
-# Named companies you care about, grouped by which ATS they use.
-# Each entry is the board token / company slug used in that ATS's public API.
-# Leave a group empty if you don't target anyone on that ATS yet.
+# targets.yaml — Companies Praise actively wants to target
+#
+# Priority tiers (kept as comment section-headers within each ATS list,
+# because YAML silently discards duplicate top-level keys):
+#   Tier 1: Fully remote-first, hire globally, no relocation needed
+#   Tier 2: Sponsorship/relocation confirmed or highly likely, strong fit
+#   Tier 3: Strong profile fit, worth monitoring for open roles
+#
+# ATS token verification status is noted inline.
+# Before running the pipeline, spot-check any token marked (VERIFY)
+# by visiting:
+#   https://boards-api.greenhouse.io/v1/boards/{token}/jobs
+#   https://api.lever.co/v0/postings/{token}
+#   https://api.ashbyhq.com/posting-api/job-board/{token}
+#
+# Canonical note: Their ATS is Greenhouse but applications are managed via
+# greenhouse.io/canonical. Token confirmed.
+#
+# Zapier note: Hiring is geo-restricted. Nigeria is currently excluded
+# from some roles. The pipeline will still pull and score listings.
+# Check each role's location note before applying.
 
 greenhouse:
-  # https://boards-api.greenhouse.io/v1/boards/{token}/jobs?content=true
-  - anthropic
-  - stripe
-  - airbnb
+  # --- Tier 1: remote-first, global hiring ---
+  - canonical          # fully remote since 2004, 75+ countries, EMEA hiring
+  - gitlab             # all-remote, 65+ countries, AI DevSecOps platform
+  - automattic         # WordPress/Tumblr parent, distributed since 2005
+  - deel               # VERIFY token — try "deel" or "letsdeel"
+  - remote             # VERIFY token — global employment platform
+  - stripe             # UK/EU presence, confirmed sponsorship history
+  - uipath             # VERIFY token — direct fit for UiARD cert
+
+  # --- Tier 2: sponsorship/relocation likely, strong match ---
+  - wise               # VERIFY token — try "wise" or "transferwise"
+  - gocardless         # London, fintech payments, UK sponsor history
+  - monzo              # London digital bank, confirmed UK sponsor
+  - checkout           # VERIFY token — London HQ, global payments
+  - paysafe            # VERIFY token — UK/EU payments, confirmed sponsor
+  - workato            # VERIFY token — enterprise automation platform
+  - scaleai            # VERIFY token — try "scaleai" or "scale-ai"
+
+  # --- Tier 3: sporadic roles, worth monitoring ---
+  - cohere             # Canadian AI company, remote roles, senior sponsor
+  - brex               # US fintech, finance automation and integration
+  - plaid              # US fintech API company, finance data integration
 
 lever:
-  # https://api.lever.co/v0/postings/{slug}?mode=json
-  - netflix
-  - shopify
+  # --- Tier 1: remote-first, global hiring ---
+  - anthropic          # AI safety and tooling; Gemini experience is adjacent
+  - figma              # remote-friendly; internal finance/ops automation
+  - notion             # VERIFY — may have moved to Ashby
+
+  # --- Tier 2: sponsorship/relocation likely, strong match ---
+  - rippling           # HR/IT automation platform, strong automation team
+  - retool             # internal tool builder, Graph/REST API fit
+  - lattice            # VERIFY — HR platform, automation and ops roles
+
+  # --- Tier 3: sporadic roles, worth monitoring ---
+  - intercom           # customer comms platform, automation engineering
 
 ashby:
-  # https://api.ashbyhq.com/posting-api/job-board/{org}?includeCompensation=true
-  - ramp
+  # --- Tier 1: remote-first, global hiring ---
+  - zapier             # automation-native; geo-restricted, check roles
+  - linear             # product tool startup, fast-growing
+  - loom               # VERIFY token — Atlassian ecosystem, remote-first
+
+  # --- Tier 2: sponsorship/relocation likely, strong match ---
+  - ramp               # US fintech; treasury/Bloomberg background signals
+  - descript           # remote-first, AI/automation engineering
+  - posthog            # fully remote, open source analytics
+
+  # --- Tier 3: sporadic roles, worth monitoring ---
+  - ashby              # internal automation roles, rare but worth watching
+  - arc                # VERIFY token — remote job platform
 
 workable:
-  # https://apply.workable.com/api/v1/widget/accounts/{subdomain}?details=true
-  []
+  # --- Tier 1 ---
+  - n8n                # VERIFY token — may use their own careers page
 
 personio:
-  # https://{company}.jobs.personio.com/xml
-  []
+  # --- Tier 1 ---
+  - personio           # VERIFY Personio subdomain format

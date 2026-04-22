@@ -1,65 +1,205 @@
-# Master CV as structured data. Fill this in before the first real run.
-# Anything left blank will be skipped by the renderer.
-
 identity:
-  name: ""
-  email: ""
-  phone: ""
-  location: ""
-  linkedin: ""
-  github: ""
-  portfolio: ""
+  name: Praise J.J. Ogukah
+  email: jogukah@gmail.com
+  phone: "+234 806 475 6294"
+  location: Lagos, Nigeria
+  linkedin: linkedin.com/in/praise-ogukah
+  github:
+  portfolio:
 
-# 3 to 4 sentences, written in your own voice. No em dashes.
-# Avoid: leveraged, spearheaded, passionate, proven, results-driven, dynamic.
 summary: |
+  Automation Developer with 6+ years building RPA and AI-driven process
+  automation for finance and banking operations. At KPMG West Africa, led
+  end-to-end delivery of a 4-country treasury integration across Bloomberg
+  FXGO, VCON, FIQ, and core banking systems, achieving 95% value
+  realization. Built production LLM workflows using the Gemini API and
+  Google AI Studio for KYC/AML and loan underwriting at scale. Core stack
+  includes UiPath (Advanced Certified), Power Automate, Python, Microsoft
+  Graph API, and Azure AI Services. Targeting senior remote roles in the
+  UK, Europe, and North America with visa sponsorship or relocation.
 
-
-# Flat list for ATS keyword hits.
 competencies:
-  - Intelligent Automation
-  - AI Agent Development
-  - RPA (UiPath, Power Automate)
-  - LLM Integration
+  - UiPath (Advanced Certified)
+  - Power Automate (Certified)
+  - Power Apps
+  - Power Platform
+  - Copilot Studio
+  - n8n
+  - Zapier
   - Python
-  - REST APIs
   - SQL
+  - Pandas
+  - REST API Integration
+  - Microsoft Graph API
+  - OAuth 2.0
+  - SWIFT Messaging
+  - Bloomberg FXGO / VCON / FIQ
+  - Enterprise Service Bus
+  - Gemini API
+  - Google AI Studio
+  - OpenAI API
+  - Azure AI Services
+  - OCR Integration
+  - Prompt Engineering
+  - RAG
+  - Chatbot Development
+  - PowerShell
+  - Data Pipelines
+  - Microsoft Azure
+  - Azure Functions
+  - UiPath Orchestrator
+  - Git
+  - Finance Operations Automation
+  - KYC / AML Automation
+  - Treasury Integration
+  - Core Banking Systems
+  - SDLC
+  - Agile / Scrum
+  - UAT and Testing
 
 experience:
-  - company: ""
-    role: ""
-    location: ""
-    start: ""        # YYYY-MM
-    end: "present"   # YYYY-MM or "present"
+  - company: KPMG West Africa
+    role: Experienced Senior, Automation Developer (Analytics & Operations)
+    location: Lagos, Nigeria
+    start: 2022-05
+    end: present
     bullets:
-      - ""
-    tags: []
+      - Owned full SDLC delivery of an AI-assisted loan underwriting automation
+        using Google AI Studio and Gemini API, processing 1,000+ complex
+        records while maintaining full KYC/AML and consumer lending compliance.
+      - Led end-to-end delivery of a 4-country finance automation program across
+        Nigeria, Ghana, Botswana, and Cameroon; designed 20+ system interfaces
+        integrating Bloomberg FXGO, VCON, FIQ, and core banking platforms,
+        achieving 95% value realization against project targets.
+      - Developed and deployed UiPath RPA bots integrating KYC/AML engines and
+        third-party APIs, cutting client onboarding time by 60%; built error
+        handling, audit trail logging, and retry logic before leading end-to-end
+        business process testing with operations teams.
+      - Developed automation scripts to transfer SWIFT message files between
+        Calypso and SWIFT infrastructure; executed validation checks prior to
+        UAT and provided post-deployment support with zero rendering errors
+        across all live transactions.
+      - Assessed automation feasibility and LLM platform options for enterprise
+        AI adoption; delivered structured recommendations and ROI cases to
+        C-suite stakeholders, directly informing solution design and budget
+        sign-off decisions.
+      - Designed target-state automation architecture for a major financial
+        institution, defining programming standards, solution design templates,
+        and integration patterns adopted across the team.
+    tags: [automation, ai, rpa, enterprise-api, treasury, llm, python, kpmg,
+           finance, bloomberg, swift, uipath, gemini]
+
+  - company: Sterling Bank PLC
+    role: RPA Developer, IT Audit Division
+    location: Lagos, Nigeria
+    start: 2020-03
+    end: 2022-04
+    bullets:
+      - Built a finance operations workflow using Power Automate, Python NLP,
+        and Azure AI Services to classify and route customer complaints in real
+        time, improving resolution speed by 3x; delivered a Power BI dashboard
+        for exception monitoring across agile sprints.
+      - Delivered production-grade ATM reconciliation automation across all ATM
+        channels; authored test procedures, ran sprint validations, and
+        supported UAT through to go-live, making it the bank's primary
+        reconciliation tool.
+      - Engineered a high-volume transaction processing bot in UiPath handling
+        500,000+ weekly records with structured exception reports, cutting
+        manual review time by 20+ hours per month.
+      - Automated end-to-end card dispute tracking by integrating data across
+        multiple backend systems; reduced investigation cycle time and improved
+        outcome consistency through active monitoring and defect resolution
+        during stabilization.
+      - Designed and maintained a centralized RPA monitoring dashboard providing
+        real-time visibility into bot performance, exception rates, and SLA
+        adherence; produced audit-ready reports on demand.
+    tags: [rpa, power-automate, uipath, azure-ai, python, banking, finance,
+           nlp, power-bi]
+
+  - company: Bincom Development Center
+    role: Web Developer
+    location: Lagos, Nigeria
+    start: 2019-12
+    end: 2020-02
+    bullets:
+      - Built and deployed Track Learning, a Python/Django web application with
+        Pandas-driven analytics and Matplotlib visualizations, attracting 50+
+        active users in pilot.
+      - Contributed to RESTful API design and agile sprint delivery across the
+        full development lifecycle.
+    tags: [python, django, rest-api, pandas, matplotlib]
 
 education:
-  - institution: ""
-    degree: ""
-    start: ""
-    end: ""
-    notes: ""
+  - institution: Covenant University
+    degree: B.Eng. Computer Engineering
+    location: Ota, Nigeria
+    start: 2013
+    end: 2018
+    notes: "CGPA: 4.22 / 5.00"
+
+  - institution: Harvard University (via edX)
+    degree: "CS50 AI: Introduction to AI with Python"
+    start:
+    end:
+    notes:
+
+  - institution: Udacity
+    degree: Intel Edge AI Scholarship
+    start: 2019
+    end: 2020
+    notes:
 
 certifications:
-  - name: ""
-    issuer: ""
-    date: ""
-    status: "active"   # active | in-progress | planned
+  - name: Microsoft Certified Power Automate RPA Developer Associate
+    issuer: Microsoft
+    date: 2024-09
+    status: active
+
+  - name: Microsoft Azure Data Fundamentals (DP-900)
+    issuer: Microsoft
+    date: 2023-06
+    status: active
+
+  - name: UiPath Certified Advanced RPA Developer (UiARD)
+    issuer: UiPath
+    date: 2021-12
+    status: active
+
+  - name: UiPath Certified RPA Developer Associate (UiRPA)
+    issuer: UiPath
+    date: 2021-06
+    status: active
+
+  - name: Microsoft Azure AI Engineer Associate (AI-102)
+    issuer: Microsoft
+    date:
+    status: in-progress
+    # NOTE: Do not list a date until this cert is passed.
+    # Remove this note and fill the date field when complete.
 
 projects:
-  - name: ""
-    bullets: []
-    tags: []
+  - name: JobHunt Pipeline
+    bullets:
+      - Built a daily job discovery and CV tailoring pipeline in Python using
+        Gemini API and GitHub Actions, pulling from 9 job board APIs with
+        two-pass scoring (heuristic prefilter plus LLM deep score) and
+        automated DOCX CV generation per top-ranked role.
+    tags: [python, gemini-api, github-actions, sqlite, automation]
+
+  - name: Community Emergency Security Alert System
+    bullets:
+      - Co-authored published research on implementation of a community
+        emergency alert system; published in International Journal of
+        Innovative Science and Research Technology, Vol. 3, Issue 6 (2018).
+    tags: [research, systems-design]
 
 languages:
-  - language: "English"
-    level: "native"
+  - language: English
+    level: Native
 
 # Personal context used by the scorer. None of this is sent in tailored CVs.
 context:
-  current_country: ""
+  current_country: Nigeria
   needs_sponsorship: true
-  seniority: "senior"   # junior | mid | senior | lead
+  seniority: senior
   open_to_relocation: true
