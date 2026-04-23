@@ -1,0 +1,78 @@
+# JobHunt brief, {{ run_date }}
+
+## Run summary
+
+- Sources run: **{{ results | length }}**
+- Jobs fetched: **{{ total_fetched }}** ({{ fresh_count }} fresh, {{ dedup_skip }} previously seen)
+- Passed heuristic prefilter: **{{ heuristic_passed }}** of {{ heuristic_evaluated }}
+- Deep-scored with Gemini: **{{ gemini_scored }}**
+- Selected for tailoring: **{{ top_n | length }}**
+
+Thresholds: heuristic >= {{ min_heuristic }}, apply-ready >= {{ min_final }}.
+
+## Top picks
+
+{% if top_n %}
+| # | Company | Role | Location | Remote | Fit | Sponsorship | Apply |
+|---|---------|------|----------|--------|-----|-------------|-------|
+{% for s in top_n -%}
+| {{ loop.index }} | {{ s.job.company }} | {{ s.job.title }} | {{ s.job.location or "-" }} | {{ "yes" if s.job.remote else ("no" if s.job.remote is sameas false else "?") }} | {{ "%.2f" | format(s.final_score) }} | {{ s.gemini.sponsorship_likely if s.gemini else "-" }} | [link]({{ s.job.apply_url }}) |
+{% endfor %}
+{% else %}
+_No jobs cleared the tailoring threshold today._
+{% endif %}
+
+## Per-job detail
+
+{% for s in top_n %}
+### {{ loop.index }}. {{ s.job.title }}, {{ s.job.company }}
+
+- **Location:** {{ s.job.location or "unspecified" }}{% if s.job.remote %} (remote){% endif %}
+- **Posted:** {{ s | posted_age }}
+- **Source:** {{ s.job.source }}
+- **Fit score:** {{ "%.2f" | format(s.final_score) }}
+- **Sponsorship signal:** {{ s.gemini.sponsorship_likely if s.gemini else "-" }}
+- **Apply:** [{{ s.job.apply_url }}]({{ s.job.apply_url }})
+- **Tailored CV:** {% if s.tailored_cv_path %}[{{ s.tailored_cv_path }}]({{ s.tailored_cv_path }}){% else %}_not generated_{% endif %}
+
+{% if s.gemini %}
+**Why apply.** {{ s.gemini.why_apply }}
+
+{% if s.gemini.strengths -%}
+**Strengths matched.**
+{% for b in s.gemini.strengths %}- {{ b }}
+{% endfor %}
+{% endif %}
+{% if s.gemini.gaps -%}
+**Gaps to address.**
+{% for b in s.gemini.gaps %}- {{ b }}
+{% endfor %}
+{% endif %}
+{% if s.gemini.red_flags -%}
+**Red flags.**
+{% for b in s.gemini.red_flags %}- {{ b }}
+{% endfor %}
+{% endif %}
+{% endif %}
+---
+{% endfor %}
+
+## Skipped but close (0.5 to 0.7)
+
+{% if close_misses %}
+{% for s in close_misses %}
+- **{{ s.job.company }}**, {{ s.job.title }} ({{ "%.2f" | format(s.final_score) }}): {{ s.gemini.why_skip if s.gemini else "no deep score" }} [link]({{ s.job.apply_url }})
+{% endfor %}
+{% else %}
+_None._
+{% endif %}
+
+## Source health
+
+| Source | Status | Count | Duration | Error |
+|--------|--------|-------|----------|-------|
+{% for r in results -%}
+| {{ r.source }} | {{ "ok" if r.ok else "FAIL" }} | {{ r.jobs | length }} | {{ r.duration_s }}s | {{ r.error or "" }} |
+{% endfor %}
+
+_This brief was produced by the JobHunt pipeline. It does not submit applications. Verify UK sponsorship claims on the GOV.UK Licensed Sponsor Register before applying._
