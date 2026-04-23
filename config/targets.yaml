@@ -24,11 +24,11 @@ greenhouse:
   # --- Tier 1: remote-first, global hiring ---
   - canonical          # fully remote since 2004, 75+ countries, EMEA hiring
   - gitlab             # all-remote, 65+ countries, AI DevSecOps platform
-  - automattic         # WordPress/Tumblr parent, distributed since 2005
   - deel               # VERIFY token — try "deel" or "letsdeel"
   - remote             # VERIFY token — global employment platform
   - stripe             # UK/EU presence, confirmed sponsorship history
   - uipath             # VERIFY token — direct fit for UiARD cert
+  - anthropic          # AI safety and tooling; Gemini experience is adjacent
 
   # --- Tier 2: sponsorship/relocation likely, strong match ---
   - wise               # VERIFY token — try "wise" or "transferwise"
@@ -46,7 +46,6 @@ greenhouse:
 
 lever:
   # --- Tier 1: remote-first, global hiring ---
-  - anthropic          # AI safety and tooling; Gemini experience is adjacent
   - figma              # remote-friendly; internal finance/ops automation
   - notion             # VERIFY — may have moved to Ashby
 
@@ -66,7 +65,6 @@ ashby:
 
   # --- Tier 2: sponsorship/relocation likely, strong match ---
   - ramp               # US fintech; treasury/Bloomberg background signals
-  - descript           # remote-first, AI/automation engineering
   - posthog            # fully remote, open source analytics
 
   # --- Tier 3: sporadic roles, worth monitoring ---

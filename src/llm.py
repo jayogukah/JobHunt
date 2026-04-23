@@ -22,10 +22,14 @@ log = logging.getLogger("jobhunt.llm")
 
 DEFAULT_MODEL = "gemini-2.5-flash"
 DEFAULT_TEMPERATURE = 0.2
-# Free tier is tight (15 RPM / 1M TPD at time of writing). Pace ourselves.
-MIN_SPACING_S = 1.0
+# Free tier: 5 RPM → one call every 12 s keeps us just under the limit.
+MIN_SPACING_S = 12.0
+MAX_RETRY_WAIT_S = 60.0
 
 _FENCE_RE = re.compile(r"^```(?:json)?\s*|\s*```$", re.MULTILINE)
+# "Please retry in 48.05s." or the proto block "retry_delay { seconds: 48 }"
+_RETRY_AFTER_RE = re.compile(r"retry in (\d+(?:\.\d+)?)\s*s", re.IGNORECASE)
+_RETRY_DELAY_BLOCK_RE = re.compile(r"retry_delay\s*\{\s*seconds:\s*(\d+)", re.IGNORECASE)
 
 
 class LLMError(RuntimeError):
@@ -85,9 +89,9 @@ class GeminiClient:
                 last_err = e
                 if not _is_retryable(e):
                     raise LLMError(f"Gemini call failed (non-retryable): {e}") from e
-                backoff = 2 ** attempt
-                log.warning("gemini retry %d/%d in %ds: %s", attempt + 1, self.max_retries, backoff, e)
-                time.sleep(backoff)
+                wait = _retry_wait_secs(e, attempt=attempt)
+                log.warning("gemini retry %d/%d in %.0fs: %s", attempt + 1, self.max_retries, wait, e)
+                time.sleep(wait)
         raise LLMError(f"Gemini call failed after {self.max_retries} retries: {last_err}")
 
     def _throttle(self) -> None:
@@ -133,6 +137,20 @@ def _parse_json(text: str) -> dict[str, Any]:
     if not isinstance(data, dict):
         raise LLMError(f"Gemini returned non-object JSON: {type(data).__name__}")
     return data
+
+
+def _retry_wait_secs(exc: Exception, *, attempt: int = 0) -> float:
+    """Return seconds to wait before the next retry.
+
+    Prefers the retry_delay the API embeds in 429 responses; falls back to
+    exponential backoff (2, 4, 8 …). Either way capped at MAX_RETRY_WAIT_S.
+    """
+    s = str(exc)
+    for pattern in (_RETRY_AFTER_RE, _RETRY_DELAY_BLOCK_RE):
+        m = pattern.search(s)
+        if m:
+            return min(float(m.group(1)), MAX_RETRY_WAIT_S)
+    return min(2 ** (attempt + 1), MAX_RETRY_WAIT_S)
 
 
 def _is_retryable(exc: Exception) -> bool:
