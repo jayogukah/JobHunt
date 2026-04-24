@@ -1,4 +1,9 @@
 # JobHunt brief, {{ run_date }}
+{% if partial_reason %}
+> **PARTIAL RUN.** {{ partial_reason }}.
+> The pipeline did not fully complete, so the picks below are based on
+> whatever scoring finished. Heuristic-only jobs are marked.
+{% endif %}
 
 ## Run summary
 
@@ -7,6 +12,7 @@
 - Passed heuristic prefilter: **{{ heuristic_passed }}** of {{ heuristic_evaluated }}
 - Deep-scored with Gemini: **{{ gemini_scored }}**
 - Selected for tailoring: **{{ top_n | length }}**
+- Wall time: **{{ duration_s }}s**
 
 Thresholds: heuristic >= {{ min_heuristic }}, apply-ready >= {{ min_final }}.
 

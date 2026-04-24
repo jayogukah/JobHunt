@@ -59,8 +59,9 @@ def connect(db_path: Path | str = DEFAULT_DB) -> Iterator[sqlite3.Connection]:
 class SeenStore:
     """Thin wrapper. Use `with SeenStore() as store: ...` or pass a conn in."""
 
-    def __init__(self, db_path: Path | str = DEFAULT_DB):
-        self._db_path = Path(db_path)
+    def __init__(self, db_path: Path | str | None = None):
+        # Look up DEFAULT_DB at call time so tests can monkeypatch it.
+        self._db_path = Path(db_path) if db_path is not None else DEFAULT_DB
         self._conn: sqlite3.Connection | None = None
 
     def __enter__(self) -> "SeenStore":

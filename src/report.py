@@ -40,6 +40,7 @@ class RunStats:
     min_final: float = 0.7
     source_failures: list[str] = field(default_factory=list)
     duration_s: float = 0.0
+    partial_reason: str | None = None
 
 
 def _posted_age(s: ScoredJob) -> str:
@@ -95,6 +96,8 @@ def write_brief(
         gemini_scored=stats.gemini_scored,
         min_heuristic=stats.min_heuristic,
         min_final=stats.min_final,
+        partial_reason=stats.partial_reason,
+        duration_s=round(stats.duration_s, 1),
     )
     out.write_text(text, encoding="utf-8")
     log.info("wrote brief: %s", out)
@@ -122,12 +125,14 @@ def append_run_log(stats: RunStats) -> Path:
                 "run_date", "total_fetched", "fresh", "dedup_skip",
                 "heuristic_evaluated", "heuristic_passed",
                 "gemini_scored", "top_n", "duration_s", "source_failures",
+                "partial_reason",
             ])
         w.writerow([
             stats.run_date, stats.total_fetched, stats.fresh_count, stats.dedup_skip,
             stats.heuristic_evaluated, stats.heuristic_passed,
             stats.gemini_scored, stats.top_n, round(stats.duration_s, 2),
             ";".join(stats.source_failures),
+            stats.partial_reason or "",
         ])
     return out
 
