@@ -1,0 +1,2 @@
+run_date,total_fetched,fresh,dedup_skip,heuristic_evaluated,heuristic_passed,gemini_scored,top_n,duration_s,source_failures,partial_reason
+2026-04-24,1594,559,1035,559,300,0,7,1289.86,greenhouse;lever;ashby,time_budget_exceeded after 7/40 LLM scores (elapsed 1290s > budget 1200s)
