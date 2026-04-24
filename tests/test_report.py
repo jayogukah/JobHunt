@@ -73,9 +73,64 @@ def test_write_jobs_json_round_trip(tmp_path: Path, monkeypatch):
     path = write_jobs_json(date(2025, 4, 23), [s])
     data = json.loads(path.read_text(encoding="utf-8"))
     assert len(data) == 1
-    assert data[0]["job"]["company"] == "Canonical"
-    assert data[0]["final_score"] == 0.85
-    assert data[0]["gemini"]["sponsorship_likely"] == "yes"
+    # Flat PWA-friendly shape
+    row = data[0]
+    assert row["company"] == "Canonical"
+    assert row["title"] == "Senior AI Engineer"
+    assert row["fit_score"] == 0.85
+    assert row["sponsorship_likely"] == "yes"
+    assert row["run_date"] == "2025-04-23"
+    assert row["cv_path"] == "tailored/example.docx"
+    assert row["strengths"] == ["tooling overlap"]
+
+
+def test_write_meta_json_shape(tmp_path: Path, monkeypatch):
+    from src.report import write_meta_json
+
+    monkeypatch.setattr("src.report.REPORTS_ROOT", tmp_path)
+    results = [
+        SourceResult(source="greenhouse", jobs=[_scored("A", "B", 0.9).job], duration_s=0.4),
+        SourceResult(source="lever", jobs=[], error="timeout", duration_s=0.1),
+    ]
+    stats = RunStats(
+        run_date="2025-04-23",
+        total_fetched=1,
+        heuristic_passed=1,
+        gemini_scored=1,
+        top_n=1,
+        duration_s=0.5,
+        partial_reason=None,
+    )
+    path = write_meta_json(date(2025, 4, 23), results, stats)
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    assert payload["run_date"] == "2025-04-23"
+    assert payload["sources"]["greenhouse"]["status"] == "ok"
+    assert payload["sources"]["lever"]["status"] == "failed"
+    assert payload["sources"]["lever"]["error"] == "timeout"
+
+
+def test_mirror_to_latest_copies_key_files(tmp_path: Path, monkeypatch):
+    from src.report import mirror_to_latest
+
+    monkeypatch.setattr("src.report.REPORTS_ROOT", tmp_path)
+    day = date(2025, 4, 23)
+    day_dir = tmp_path / day.isoformat()
+    (day_dir / "tailored").mkdir(parents=True)
+    (day_dir / "brief.md").write_text("hi", encoding="utf-8")
+    (day_dir / "jobs.json").write_text("[]", encoding="utf-8")
+    (day_dir / "meta.json").write_text("{}", encoding="utf-8")
+    (day_dir / "tailored" / "example.docx").write_bytes(b"PK\x03\x04")
+
+    latest = mirror_to_latest(day)
+    assert (latest / "jobs.json").read_text() == "[]"
+    assert (latest / "meta.json").read_text() == "{}"
+    assert (latest / "brief.md").read_text() == "hi"
+    assert (latest / "tailored" / "example.docx").exists()
+
+    # Re-running replaces the tailored folder cleanly, not merges.
+    (day_dir / "tailored" / "example.docx").write_bytes(b"NEW")
+    mirror_to_latest(day)
+    assert (latest / "tailored" / "example.docx").read_bytes() == b"NEW"
 
 
 def test_append_run_log_writes_header_once(tmp_path: Path, monkeypatch):

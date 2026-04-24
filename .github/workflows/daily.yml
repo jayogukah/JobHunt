@@ -73,6 +73,9 @@ jobs:
           # Reports folder may not exist if the run failed very early; only
           # add what we actually have.
           [ -d "reports/$TODAY" ] && git add "reports/$TODAY"
+          # reports/latest/ is mirrored from reports/{TODAY}/ by write_meta_json
+          # + mirror_to_latest. The PWA reads this path via raw.githubusercontent.
+          [ -d "reports/latest" ] && git add -f "reports/latest"
           [ -f reports/run_log.csv ] && git add reports/run_log.csv
           [ -f db/seen.sqlite ] && git add -f db/seen.sqlite
           if git diff --cached --quiet; then

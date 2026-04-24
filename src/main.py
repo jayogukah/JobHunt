@@ -39,7 +39,7 @@ from typing import Any, Callable
 from src.config import load_profile, load_search, load_targets
 from src.dedupe import SeenStore
 from src.models import Job, ScoredJob, SourceResult
-from src.report import RunStats, append_run_log, write_brief, write_jobs_json
+from src.report import RunStats, append_run_log, mirror_to_latest, write_brief, write_jobs_json, write_meta_json
 from src.score import filter_and_score, score_job_llm
 from src.sources import (
     adzuna,
@@ -366,7 +366,9 @@ def main(argv: list[str] | None = None) -> int:
         try:
             brief_path = write_brief(run_date, results, top, close, stats)
             write_jobs_json(run_date, scored_jobs)
+            write_meta_json(run_date, results, stats)
             append_run_log(stats)
+            mirror_to_latest(run_date)
         except Exception as e:  # noqa: BLE001
             log.exception("report writing failed: %s", e)
 

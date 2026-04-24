@@ -25,3 +25,9 @@ dist/
 # runtime state
 db/*.sqlite
 db/*.sqlite-journal
+
+# PWA build caches (the built /docs/ output IS committed and served by Pages)
+jobhunt-pwa/node_modules/
+jobhunt-pwa/dist/
+jobhunt-pwa/.vite/
+npm-debug.log*
