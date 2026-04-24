@@ -34,6 +34,9 @@ scoring:
   min_heuristic_score: 0.4      # drop below this before Gemini
   top_n_for_tailoring: 7        # how many get a tailored CV per run
   min_final_score_for_apply: 0.7
+  max_gemini_scored: 40         # hard cap on LLM calls per run (free-tier budget)
+  time_budget_seconds: 1200     # stop Gemini loop past 20 min; leaves headroom
+                                # for the 25 min Actions job timeout
 
 # How many days to suppress a previously-scored fingerprint. Re-score only
 # if the description has changed.

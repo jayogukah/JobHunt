@@ -4,9 +4,13 @@ Pipeline (when fully run):
   1. Fetch from all enabled sources
   2. Normalize, then split via SeenStore into fresh vs previously-seen
   3. Heuristic prefilter + drop below min_heuristic_score
-  4. Gemini deep scoring for survivors (skipped for already-scored recent)
+  4. Gemini deep scoring for the top-heuristic survivors (capped)
   5. Rank, select top N, tailor via Gemini, render DOCX
   6. Write brief.md, jobs.json, run_log.csv. Optionally email.
+
+Everything from step 2 onward runs inside a try/finally that writes the
+brief + sends email even if we crash, time out, or get SIGTERMed by the
+GitHub Actions runner. Partial results are labelled as such in the brief.
 
 Flags:
   --dry-run            Fetch + heuristic only. No Gemini calls, no DOCX, no email.
@@ -23,6 +27,7 @@ import argparse
 import json
 import logging
 import os
+import signal
 import smtplib
 import sys
 import time
@@ -49,6 +54,10 @@ from src.sources import (
 )
 
 log = logging.getLogger("jobhunt")
+
+# Defaults. Overridable via scoring config in search.yaml.
+DEFAULT_MAX_GEMINI_SCORED = 40
+DEFAULT_TIME_BUDGET_S = 1200  # 20 minutes; Actions timeout is 25.
 
 
 @dataclass
@@ -136,6 +145,20 @@ def select_top_n_and_close(
     return top, close
 
 
+def split_llm_eligible(
+    scored_jobs: list[ScoredJob], max_llm: int
+) -> tuple[list[ScoredJob], list[ScoredJob]]:
+    """Sort by heuristic score desc; return (eligible_for_llm, heuristic_only).
+
+    Eligible are the top `max_llm` by heuristic score. The rest keep their
+    heuristic score as their final score and never see Gemini.
+    """
+    ranked = sorted(scored_jobs, key=lambda s: s.heuristic.score, reverse=True)
+    if max_llm <= 0:
+        return [], ranked
+    return ranked[:max_llm], ranked[max_llm:]
+
+
 def _tailor_and_render(top: list[ScoredJob], profile: dict[str, Any], run_date: date, client) -> None:
     # Import lazily so --dry-run and --no-tailor don't pull in google-generativeai.
     from src.render import render_cv
@@ -159,6 +182,7 @@ def _maybe_email(brief_path, run_date: date) -> None:
     from_addr = os.environ.get("GMAIL_FROM_ADDRESS") or to_addr
     app_pw = os.environ.get("GMAIL_APP_PASSWORD")
     if not (to_addr and from_addr and app_pw):
+        log.info("email skipped (GMAIL_* secrets not all set)")
         return
     body = brief_path.read_text(encoding="utf-8")
     msg = EmailMessage()
@@ -173,6 +197,25 @@ def _maybe_email(brief_path, run_date: date) -> None:
         log.info("emailed brief to %s", to_addr)
     except Exception as e:  # noqa: BLE001
         log.warning("email failed: %s", e)
+
+
+def _install_sigterm_as_interrupt() -> None:
+    """Turn SIGTERM into KeyboardInterrupt so `try/finally` fires cleanly.
+
+    GitHub Actions sends SIGTERM when `timeout-minutes` is exceeded, then
+    SIGKILL 10s later. Default SIGTERM handling in Python just terminates
+    the process immediately, which skips `finally` blocks. Re-raising as
+    KeyboardInterrupt lets our finally block write the partial brief.
+    """
+
+    def _handler(signum, frame):  # noqa: ARG001
+        raise KeyboardInterrupt(f"received signal {signum}")
+
+    try:
+        signal.signal(signal.SIGTERM, _handler)
+    except ValueError:
+        # Happens if called outside the main thread (e.g. under pytest threads).
+        pass
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
@@ -193,6 +236,7 @@ def main(argv: list[str] | None = None) -> int:
         format="%(message)s",
         stream=sys.stdout,
     )
+    _install_sigterm_as_interrupt()
     t_start = time.monotonic()
     run_date = date.today()
 
@@ -202,43 +246,78 @@ def main(argv: list[str] | None = None) -> int:
     ctx = profile.get("context") or {}
     only = {s.strip() for s in args.only.split(",") if s.strip()} or None
 
-    # 1. fetch
-    registry = default_registry()
-    results = run_sources(registry, targets, search, only=only, limit=args.limit)
-    all_jobs: list[Job] = [j for r in results for j in r.jobs]
-
-    # 2. dedupe
     scoring_cfg = search.get("scoring") or {}
     min_heur = float(scoring_cfg.get("min_heuristic_score", 0.4))
     min_final = float(scoring_cfg.get("min_final_score_for_apply", 0.7))
     top_n_cap = int(scoring_cfg.get("top_n_for_tailoring", 7))
+    max_llm = int(scoring_cfg.get("max_gemini_scored", DEFAULT_MAX_GEMINI_SCORED))
+    time_budget = float(scoring_cfg.get("time_budget_seconds", DEFAULT_TIME_BUDGET_S))
     dedupe_days = int(search.get("dedupe_skip_days", 14))
 
-    with SeenStore() as store:
-        fresh, skipped = store.partition(all_jobs, within_days=dedupe_days)
+    # State that the finally block reads. Pre-populated so partial runs can
+    # still produce a brief.
+    results: list[SourceResult] = []
+    all_jobs: list[Job] = []
+    fresh: list[Job] = []
+    skipped: list[Job] = []
+    scored_pairs: list[tuple] = []
+    passed: list[tuple] = []
+    scored_jobs: list[ScoredJob] = []
+    top: list[ScoredJob] = []
+    close: list[ScoredJob] = []
+    partial_reason: str | None = None
+    brief_path = None
 
-    log.info(json.dumps({"event": "dedupe_done", "fresh": len(fresh), "skipped_seen": len(skipped)}))
+    try:
+        # 1. fetch
+        registry = default_registry()
+        results = run_sources(registry, targets, search, only=only, limit=args.limit)
+        all_jobs = [j for r in results for j in r.jobs]
 
-    # 3. heuristic prefilter
-    scored_pairs = filter_and_score(fresh, search, ctx)
-    passed = [(j, h) for j, h in scored_pairs if h.score >= min_heur]
-    log.info(json.dumps({"event": "heuristic_done", "evaluated": len(scored_pairs), "passed": len(passed)}))
+        # 2. dedupe
+        with SeenStore() as store:
+            fresh, skipped = store.partition(all_jobs, within_days=dedupe_days)
+        log.info(json.dumps({"event": "dedupe_done", "fresh": len(fresh), "skipped_seen": len(skipped)}))
 
-    # 4. Gemini deep scoring
-    gemini_client = None
-    scored_jobs: list[ScoredJob] = [ScoredJob(job=j, heuristic=h) for j, h in passed]
-    if args.dry_run:
-        log.info(json.dumps({"event": "dry_run", "note": "skipping Gemini scoring and tailoring"}))
-    else:
-        try:
-            from src.llm import GeminiClient
+        # 3. heuristic prefilter
+        scored_pairs = filter_and_score(fresh, search, ctx)
+        passed = [(j, h) for j, h in scored_pairs if h.score >= min_heur]
+        scored_jobs = [ScoredJob(job=j, heuristic=h) for j, h in passed]
+        log.info(json.dumps({
+            "event": "heuristic_done", "evaluated": len(scored_pairs), "passed": len(passed),
+        }))
 
-            gemini_client = GeminiClient()
-        except Exception as e:  # noqa: BLE001
-            log.warning("Gemini client init failed: %s; continuing with heuristic only", e)
+        # 4. Gemini deep scoring — capped and time-budgeted
+        gemini_client = None
+        if args.dry_run:
+            log.info(json.dumps({"event": "dry_run", "note": "skipping Gemini scoring and tailoring"}))
+        else:
+            try:
+                from src.llm import GeminiClient
 
-        if gemini_client is not None:
-            for sj in scored_jobs:
+                gemini_client = GeminiClient()
+            except Exception as e:  # noqa: BLE001
+                log.warning("Gemini client init failed: %s; continuing with heuristic only", e)
+                partial_reason = f"gemini_init_failed: {e}"
+
+        llm_jobs, heuristic_only = split_llm_eligible(scored_jobs, max_llm)
+        if gemini_client is not None and llm_jobs:
+            log.info(json.dumps({
+                "event": "gemini_begin",
+                "eligible": len(llm_jobs),
+                "cap": max_llm,
+                "deferred_to_heuristic": len(heuristic_only),
+                "budget_s": time_budget,
+            }))
+            for i, sj in enumerate(llm_jobs, start=1):
+                elapsed = time.monotonic() - t_start
+                if elapsed > time_budget:
+                    partial_reason = (
+                        f"time_budget_exceeded after {i - 1}/{len(llm_jobs)} LLM scores "
+                        f"(elapsed {elapsed:.0f}s > budget {time_budget:.0f}s)"
+                    )
+                    log.warning(json.dumps({"event": "gemini_time_budget", "scored": i - 1, "remaining": len(llm_jobs) - (i - 1)}))
+                    break
                 try:
                     sj.gemini = score_job_llm(gemini_client, sj.job, profile)
                 except Exception as e:  # noqa: BLE001
@@ -249,39 +328,60 @@ def main(argv: list[str] | None = None) -> int:
                         "error": str(e),
                     }))
 
-    # 5. Rank and tailor top N
-    top, close = select_top_n_and_close(scored_jobs, top_n=top_n_cap, min_final_for_apply=min_final)
-    if not args.dry_run and not args.no_tailor and gemini_client is not None and top:
-        _tailor_and_render(top, profile, run_date, gemini_client)
+        # 5. Rank and tailor top N
+        top, close = select_top_n_and_close(scored_jobs, top_n=top_n_cap, min_final_for_apply=min_final)
+        if not args.dry_run and not args.no_tailor and gemini_client is not None and top:
+            # Guard tailoring with the same budget so a slow tail-end doesn't
+            # kill the finally block.
+            elapsed = time.monotonic() - t_start
+            if elapsed > time_budget:
+                partial_reason = partial_reason or f"time_budget_exceeded before tailoring (elapsed {elapsed:.0f}s)"
+                log.warning("skipping tailoring: over time budget")
+            else:
+                _tailor_and_render(top, profile, run_date, gemini_client)
 
-    # 6. Reports
-    stats = RunStats(
-        run_date=run_date.isoformat(),
-        total_fetched=len(all_jobs),
-        fresh_count=len(fresh),
-        dedup_skip=len(skipped),
-        heuristic_evaluated=len(scored_pairs),
-        heuristic_passed=len(passed),
-        gemini_scored=sum(1 for sj in scored_jobs if sj.gemini),
-        top_n=len(top),
-        min_heuristic=min_heur,
-        min_final=min_final,
-        source_failures=[r.source for r in results if not r.ok],
-        duration_s=time.monotonic() - t_start,
-    )
-    brief_path = write_brief(run_date, results, top, close, stats)
-    write_jobs_json(run_date, scored_jobs)
-    append_run_log(stats)
+    except KeyboardInterrupt as e:
+        partial_reason = partial_reason or f"interrupted: {e}"
+        log.warning("pipeline interrupted: %s", e)
+    except Exception as e:  # noqa: BLE001
+        partial_reason = partial_reason or f"crashed: {type(e).__name__}: {e}"
+        log.exception("pipeline crashed: %s", e)
+    finally:
+        # 6. Reports — always write whatever state we reached.
+        stats = RunStats(
+            run_date=run_date.isoformat(),
+            total_fetched=len(all_jobs),
+            fresh_count=len(fresh),
+            dedup_skip=len(skipped),
+            heuristic_evaluated=len(scored_pairs),
+            heuristic_passed=len(passed),
+            gemini_scored=sum(1 for sj in scored_jobs if sj.gemini),
+            top_n=len(top),
+            min_heuristic=min_heur,
+            min_final=min_final,
+            source_failures=[r.source for r in results if not r.ok],
+            duration_s=time.monotonic() - t_start,
+            partial_reason=partial_reason,
+        )
+        try:
+            brief_path = write_brief(run_date, results, top, close, stats)
+            write_jobs_json(run_date, scored_jobs)
+            append_run_log(stats)
+        except Exception as e:  # noqa: BLE001
+            log.exception("report writing failed: %s", e)
 
-    # 7. Email (best-effort)
-    if not args.dry_run and not args.no_email:
-        _maybe_email(brief_path, run_date)
+        # 7. Email (best-effort) — send even on partial runs so the user sees
+        # the failure.
+        if brief_path and not args.dry_run and not args.no_email:
+            _maybe_email(brief_path, run_date)
 
-    # Console summary
-    print(f"\nJobHunt {run_date.isoformat()} done in {stats.duration_s:.1f}s")
-    print(f"  fetched={stats.total_fetched} fresh={stats.fresh_count} passed_heuristic={stats.heuristic_passed}")
-    print(f"  gemini_scored={stats.gemini_scored} top_n={stats.top_n}")
-    print(f"  brief: {brief_path}")
+        # Console summary
+        print(f"\nJobHunt {run_date.isoformat()} done in {stats.duration_s:.1f}s"
+              + (f" (PARTIAL: {partial_reason})" if partial_reason else ""))
+        print(f"  fetched={stats.total_fetched} fresh={stats.fresh_count} passed_heuristic={stats.heuristic_passed}")
+        print(f"  gemini_scored={stats.gemini_scored} top_n={stats.top_n}")
+        if brief_path:
+            print(f"  brief: {brief_path}")
     return 0
 
 
