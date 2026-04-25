@@ -1,6 +1,9 @@
 export default function Header({ runDate, onRefresh, refreshing }) {
   return (
-    <header className="sticky top-0 z-20 bg-slate-900/95 backdrop-blur border-b border-slate-800">
+    <header
+      className="sticky top-0 z-20 bg-slate-900/95 backdrop-blur border-b border-slate-800"
+      style={{ paddingTop: "env(safe-area-inset-top)" }}
+    >
       <div className="px-4 py-3 flex items-center justify-between">
         <div className="flex items-baseline gap-2">
           <h1 className="text-xl font-semibold tracking-tight">JobHunt</h1>

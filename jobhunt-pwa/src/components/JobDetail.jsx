@@ -2,6 +2,7 @@ import { useState } from "react";
 import { resolveCvUrl } from "../config";
 import {
   formatSalary,
+  formatScore,
   postedAge,
   scoreColor,
   sponsorshipBadge,
@@ -38,10 +39,17 @@ export default function JobDetail({ job, onBack }) {
   const salary = formatSalary(job.salary_min, job.salary_max, job.currency);
   const age = postedAge(job.posted_at);
   const cvUrl = resolveCvUrl(job.cv_path);
+  const aiSummary = (job.ai_summary || "").trim();
+  const nextSteps = Array.isArray(job.next_steps)
+    ? job.next_steps.filter((s) => s && String(s).trim())
+    : [];
 
   return (
     <div className="min-h-[100dvh] bg-slate-900">
-      <header className="sticky top-0 z-20 bg-slate-900/95 backdrop-blur border-b border-slate-800">
+      <header
+        className="sticky top-0 z-20 bg-slate-900/95 backdrop-blur border-b border-slate-800"
+        style={{ paddingTop: "env(safe-area-inset-top)" }}
+      >
         <div className="px-4 py-3 flex items-center gap-2">
           <button
             type="button"
@@ -59,6 +67,7 @@ export default function JobDetail({ job, onBack }) {
       </header>
 
       <main className="px-4 pb-28 pt-3 max-w-xl mx-auto">
+        {/* 1. Meta row + 2. Salary row */}
         <div className="flex flex-wrap gap-2 text-xs">
           {job.location && (
             <span className="inline-flex items-center rounded-full bg-slate-800 border border-slate-700 px-2 py-0.5 text-slate-300">
@@ -85,34 +94,51 @@ export default function JobDetail({ job, onBack }) {
           )}
         </div>
 
+        {/* 3. Fit score */}
         <div className="mt-4 rounded-xl border border-slate-800 bg-slate-800/50 p-4">
           <div className="flex items-baseline justify-between">
             <span className="text-xs uppercase tracking-wider text-slate-500">Fit score</span>
-            <span className={`text-3xl font-bold ${sc.text}`}>{fit.toFixed(2)}</span>
+            <span className={`text-3xl font-bold ${sc.text}`}>{formatScore(fit)}</span>
           </div>
           <div className="mt-2 h-2 rounded-full bg-slate-700 overflow-hidden">
             <div className={`h-full ${sc.bg}`} style={{ width: `${Math.max(0, Math.min(1, fit)) * 100}%` }} />
           </div>
         </div>
 
+        {/* 4. AI Summary (new) */}
+        {aiSummary && (
+          <section className="mt-4">
+            <h2 className="text-xs uppercase tracking-wider text-slate-500 mb-1">What this role actually is</h2>
+            <p className="text-sm text-slate-200 leading-relaxed whitespace-pre-wrap">{aiSummary}</p>
+          </section>
+        )}
+
+        {/* 5. Why apply (relabeled) */}
         {job.why_apply && (
           <section className="mt-4">
-            <h2 className="text-xs uppercase tracking-wider text-slate-500 mb-1">Why apply</h2>
+            <h2 className="text-xs uppercase tracking-wider text-slate-500 mb-1">Why it fits your background</h2>
             <p className="text-sm text-slate-200 leading-relaxed whitespace-pre-wrap">{job.why_apply}</p>
           </section>
         )}
 
+        {/* 6. Next steps (new) — actionable, amber accent */}
+        {nextSteps.length > 0 && (
+          <section className="mt-4 rounded-lg border-l-4 border-amber-400 bg-slate-700/40 p-3">
+            <h2 className="text-sm font-semibold text-slate-100">Things to do before applying</h2>
+            <ul className="mt-2 space-y-1.5 text-sm text-slate-200 list-disc pl-5">
+              {nextSteps.map((step, i) => (
+                <li key={i}>{step}</li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {/* 7-9. Collapsible sections */}
         <Section title="Strengths" items={job.strengths} defaultOpen />
         <Section title="Gaps" items={job.gaps} />
         <Section title="Red flags" items={job.red_flags} itemClass="text-amber-300" />
 
-        {job.why_skip && (
-          <section className="border-t border-slate-800 py-3">
-            <h2 className="text-sm font-semibold text-slate-200">Why the scorer flagged this</h2>
-            <p className="mt-1 text-sm text-slate-300">{job.why_skip}</p>
-          </section>
-        )}
-
+        {/* 10. Source */}
         <div className="mt-4 text-[11px] text-slate-500">
           Source: {job.source}
           {job.source_id ? ` · ${job.source_id}` : ""}
@@ -120,16 +146,20 @@ export default function JobDetail({ job, onBack }) {
         </div>
       </main>
 
-      <div className="fixed bottom-0 inset-x-0 bg-slate-900/95 backdrop-blur border-t border-slate-800 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
-        <div className="max-w-xl mx-auto px-4 pt-3 space-y-2">
+      {/* 11. Sticky bottom button row */}
+      <div
+        className="fixed bottom-0 inset-x-0 bg-slate-900/95 backdrop-blur border-t border-slate-800"
+        style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
+      >
+        <div className="max-w-xl mx-auto px-4 pt-3 pb-3 space-y-2">
           {cvUrl && (
             <a
               href={cvUrl}
               target="_blank"
               rel="noreferrer noopener"
-              className="block text-center w-full rounded-lg border border-slate-600 bg-slate-800 py-3 text-sm font-semibold text-slate-100 hover:bg-slate-700"
+              className="block text-center w-full rounded-lg border border-slate-400 bg-transparent py-3 text-sm font-semibold text-white hover:bg-slate-800"
             >
-              View tailored CV
+              Tailor My CV to This Role
             </a>
           )}
           {job.apply_url && (
@@ -137,9 +167,9 @@ export default function JobDetail({ job, onBack }) {
               href={job.apply_url}
               target="_blank"
               rel="noreferrer noopener"
-              className="block text-center w-full rounded-lg bg-white py-3 text-sm font-semibold text-slate-900 hover:bg-slate-200"
+              className="block text-center w-full rounded-lg bg-emerald-600 py-3 text-sm font-semibold text-white hover:bg-emerald-500"
             >
-              Apply now
+              Apply Now
             </a>
           )}
         </div>

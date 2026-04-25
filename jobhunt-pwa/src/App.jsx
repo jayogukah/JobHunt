@@ -6,7 +6,10 @@ import JobCard from "./components/JobCard";
 import JobDetail from "./components/JobDetail";
 import { filterJobs, useJobs } from "./hooks/useJobs";
 
-const INITIAL_FILTERS = { minFit: 0, sponsorship: "all", remoteOnly: false };
+// Default to sponsorship=yes because the primary user needs visa support.
+// The user can flip this to "all" or "unclear" via the FilterBar; the helper
+// hint below the bar disappears once they do.
+const INITIAL_FILTERS = { minFit: 0, sponsorship: "yes", remoteOnly: false };
 
 export default function App() {
   const { jobs, meta, loading, error, reload } = useJobs();
@@ -27,6 +30,11 @@ export default function App() {
       <Header runDate={meta?.run_date} onRefresh={reload} refreshing={loading} />
       <RunSummary meta={meta} jobCount={jobs.length} />
       <FilterBar filters={filters} setFilters={setFilters} />
+      {filters.sponsorship === "yes" && (
+        <p className="px-4 pt-2 text-[11px] text-slate-500 max-w-xl mx-auto">
+          Showing visa-sponsorship roles by default. Change above to see all.
+        </p>
+      )}
 
       {loading && <Spinner />}
       {error && !loading && <ErrorBlock message={error} onRetry={reload} />}

@@ -2,6 +2,7 @@ import {
   avatarColor,
   companyInitials,
   formatSalary,
+  formatScore,
   postedAge,
   scoreColor,
   sponsorshipBadge,
@@ -51,7 +52,7 @@ export default function JobCard({ job, onOpen, index }) {
                 style={{ width: `${Math.max(0, Math.min(1, fit)) * 100}%` }}
               />
             </div>
-            <span className={`text-xs font-semibold ${sc.text}`}>{fit.toFixed(2)}</span>
+            <span className={`text-xs font-semibold ${sc.text}`}>{formatScore(fit)}</span>
             <span
               className={`shrink-0 inline-flex items-center rounded-full border px-1.5 py-0.5 text-[10px] ${sp.cls}`}
             >

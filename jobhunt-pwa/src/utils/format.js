@@ -19,6 +19,14 @@ export function scoreColor(score) {
   return { bg: "bg-rose-500", text: "text-rose-400" };
 }
 
+// Whole-number percentage label, used wherever a fit/heuristic score is shown
+// to a human. Bar widths (CSS percentage) still multiply the raw 0..1 value
+// directly — do not route the bar width through this.
+export function formatScore(score) {
+  if (score == null) return "N/A";
+  return Math.round(score * 100) + "%";
+}
+
 export function sponsorshipBadge(value) {
   switch ((value || "").toLowerCase()) {
     case "yes":
