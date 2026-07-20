@@ -86,3 +86,4 @@ run_date,total_fetched,fresh,dedup_skip,heuristic_evaluated,heuristic_passed,gem
 2026-07-17,1665,675,990,675,407,24,2,1336.79,greenhouse;lever;ashby,time_budget_exceeded after 29/40 LLM scores (elapsed 1337s > budget 1200s)
 2026-07-18,1662,635,1027,635,403,19,6,1205.07,greenhouse;lever;ashby,time_budget_exceeded after 24/40 LLM scores (elapsed 1205s > budget 1200s)
 2026-07-19,1663,618,1045,618,421,22,7,1264.84,greenhouse;lever;ashby,time_budget_exceeded after 27/40 LLM scores (elapsed 1265s > budget 1200s)
+2026-07-20,1665,589,1076,589,408,20,6,1200.23,greenhouse;lever;ashby,time_budget_exceeded after 25/40 LLM scores (elapsed 1200s > budget 1200s)
