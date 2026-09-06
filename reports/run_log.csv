@@ -133,3 +133,4 @@ run_date,total_fetched,fresh,dedup_skip,heuristic_evaluated,heuristic_passed,gem
 2026-09-03,1730,788,942,788,438,21,7,1375.6,greenhouse;lever;ashby,time_budget_exceeded after 27/40 LLM scores (elapsed 1376s > budget 1200s)
 2026-09-04,1729,805,924,805,462,22,7,1357.5,greenhouse;lever;ashby,time_budget_exceeded after 27/40 LLM scores (elapsed 1357s > budget 1200s)
 2026-09-05,1732,770,962,770,438,9,7,1338.58,greenhouse;lever;ashby,time_budget_exceeded after 15/40 LLM scores (elapsed 1339s > budget 1200s)
+2026-09-06,1806,840,966,840,455,22,7,1235.84,greenhouse;lever;ashby,time_budget_exceeded after 27/40 LLM scores (elapsed 1236s > budget 1200s)
