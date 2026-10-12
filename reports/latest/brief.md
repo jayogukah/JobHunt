@@ -1,6 +1,6 @@
-# JobHunt brief, 2026-10-11
+# JobHunt brief, 2026-10-12
 
-> **PARTIAL RUN.** time_budget_exceeded after 21/40 LLM scores (elapsed 1256s > budget 1200s).
+> **PARTIAL RUN.** time_budget_exceeded after 27/40 LLM scores (elapsed 1248s > budget 1200s).
 > The pipeline did not fully complete, so the picks below are based on
 > whatever scoring finished. Heuristic-only jobs are marked.
 
@@ -8,11 +8,11 @@
 ## Run summary
 
 - Sources run: **9**
-- Jobs fetched: **1895** (910 fresh, 985 previously seen)
-- Passed heuristic prefilter: **496** of 910
-- Deep-scored with Gemini: **16**
+- Jobs fetched: **1889** (944 fresh, 945 previously seen)
+- Passed heuristic prefilter: **498** of 944
+- Deep-scored with Gemini: **22**
 - Selected for tailoring: **7**
-- Wall time: **1256.4s**
+- Wall time: **1248.3s**
 
 Thresholds: heuristic >= 0.4, apply-ready >= 0.7.
 
@@ -21,110 +21,116 @@ Thresholds: heuristic >= 0.4, apply-ready >= 0.7.
 
 | # | Company | Role | Location | Remote | Fit | Sponsorship | Apply |
 |---|---------|------|----------|--------|-----|-------------|-------|
-| 1 | Quest Software Canada Inc | Senior AI Software Developer | Canada | ? | 0.85 | unclear | [link](https://www.adzuna.ca/details/5922440968?utm_medium=api&utm_source=3a0e1b6c) |
-| 2 | PA Consulting | Senior AI Engineer | UK, Northern Ireland, Belfast | ? | 0.80 | unclear | [link](https://www.adzuna.co.uk/jobs/land/ad/5895564004?se=ovGrd2zF8RGRs48L_-pA7w&utm_medium=api&utm_source=3a0e1b6c&v=55A496FEB81AB5DB27647D7568355FA631E0F89D) |
-| 3 | EnthuZiastic | Generative AI Automation Engineer - Remote Job | US, Michigan, Macomb County, Warren | yes | 0.75 | unclear | [link](https://www.adzuna.com/land/ad/5528384771?se=Bp4tkGzF8RGRs48L_-pA7w&utm_medium=api&utm_source=3a0e1b6c&v=4B05646A6E1B818044FDEA162713F55DE8D163C2) |
-| 4 | EnthuZiastic | Generative AI Automation Engineer - Remote Job | US, Maryland, Montgomery County, Gaithersburg | yes | 0.75 | unclear | [link](https://www.adzuna.com/land/ad/5528384742?se=Bp4tkGzF8RGRs48L_-pA7w&utm_medium=api&utm_source=3a0e1b6c&v=7FBEB0287F155FE33D0813B4DCBE01F70FC99DBA) |
-| 5 | EnthuZiastic | Generative AI Automation Engineer - Remote Job | US, Indiana, Lake County, Gary | yes | 0.72 | - | [link](https://www.adzuna.com/land/ad/5528384757?se=Bp4tkGzF8RGRs48L_-pA7w&utm_medium=api&utm_source=3a0e1b6c&v=56137A812FE818094C2E6E8FBCB2D89AA766EAC2) |
-| 6 | EnthuZiastic | Generative AI Automation Engineer - Remote Job | US, Pennsylvania, Lehigh County, Allentown | yes | 0.72 | - | [link](https://www.adzuna.com/land/ad/5528384755?se=Bp4tkGzF8RGRs48L_-pA7w&utm_medium=api&utm_source=3a0e1b6c&v=53C252F540F8D98FA87ABEE66773727C56DDC1B5) |
-| 7 | EnthuZiastic | Generative AI Automation Engineer - Remote Job | US, Kentucky, Fayette County, Lexington | yes | 0.72 | - | [link](https://www.adzuna.com/land/ad/5528384727?se=Bp4tkGzF8RGRs48L_-pA7w&utm_medium=api&utm_source=3a0e1b6c&v=EC4D966A680DFF9C823905363755C4FBBE69FD0F) |
+| 1 | EnthuZiastic | Generative AI Automation Engineer - Remote Job | US, California, Merced County, Merced | yes | 0.85 | unclear | [link](https://www.adzuna.com/details/5528384784?utm_medium=api&utm_source=3a0e1b6c) |
+| 2 | EnthuZiastic | Generative AI Automation Engineer - Remote Job | US, Rhode Island, Providence County, Providence | yes | 0.80 | unclear | [link](https://www.adzuna.com/details/5528384725?utm_medium=api&utm_source=3a0e1b6c) |
+| 3 | System One | AI Automation Engineer | US, Virginia, Fairfax County, Vienna | yes | 0.75 | no | [link](https://www.adzuna.com/land/ad/5914271426?se=1gU3U0nG8RGnd9fxutKEAA&utm_medium=api&utm_source=3a0e1b6c&v=792CE9BF6228B03BDBAA8F5509819CD6E06AAC0B) |
+| 4 | EnthuZiastic | Generative AI Automation Engineer - Remote Job | US, Wisconsin, Walworth County, Whitewater | yes | 0.75 | unclear | [link](https://www.adzuna.com/details/5528384747?utm_medium=api&utm_source=3a0e1b6c) |
+| 5 | EnthuZiastic | Generative AI Automation Engineer - Remote Job | US, New Jersey, Middlesex County, New Brunswick | yes | 0.75 | unclear | [link](https://www.adzuna.com/details/5528384798?utm_medium=api&utm_source=3a0e1b6c) |
+| 6 | EnthuZiastic | Generative AI Automation Engineer - Remote Job | US, Virginia, Richmond County, Richmond | yes | 0.72 | - | [link](https://www.adzuna.com/details/5528384776?utm_medium=api&utm_source=3a0e1b6c) |
+| 7 | EnthuZiastic | Generative AI Automation Engineer - Remote Job | US, Indiana, St. Joseph County, South Bend | yes | 0.72 | - | [link](https://www.adzuna.com/details/5528384778?utm_medium=api&utm_source=3a0e1b6c) |
 
 
 
 ## Per-job detail
 
 
-### 1. Senior AI Software Developer, Quest Software Canada Inc
+### 1. Generative AI Automation Engineer - Remote Job, EnthuZiastic
 
-- **Location:** Canada
-- **Posted:** today
+- **Location:** US, California, Merced County, Merced (remote)
+- **Posted:** 10 month(s) ago
 - **Source:** adzuna
 - **Fit score:** 0.85
 - **Sponsorship signal:** unclear
-- **Apply:** [https://www.adzuna.ca/details/5922440968?utm_medium=api&utm_source=3a0e1b6c](https://www.adzuna.ca/details/5922440968?utm_medium=api&utm_source=3a0e1b6c)
+- **Apply:** [https://www.adzuna.com/details/5528384784?utm_medium=api&utm_source=3a0e1b6c](https://www.adzuna.com/details/5528384784?utm_medium=api&utm_source=3a0e1b6c)
 - **Tailored CV:** _not generated_
 
 
-**Why apply.** Praise's 6+ years in AI-driven automation, including production LLM workflows with Gemini API and Google AI Studio, align well with the AI Automation Engineer role. Their experience leading end-to-end SDLC delivery for complex automation programs demonstrates the required senior-level capability.
+**Why apply.** Your 6+ years in RPA and AI-driven automation, including production LLM workflows with Gemini API and Google AI Studio, directly align with this Generative AI Automation Engineer role. You have strong experience building automation with UiPath and Power Automate, and the remote nature of the job fits your target. This role appears to be a strong match for your combined skill set.
 
 **Strengths matched.**
-- 6+ years building AI-driven process automation
-- Production LLM workflows using Gemini API and Google AI Studio
-- Led end-to-end SDLC delivery for complex automation programs
-- Advanced UiPath and Power Automate certifications
+- Gemini API and Google AI Studio for production LLM workflows
+- UiPath and Power Automate for RPA and process automation
+- 6+ years of experience in AI-driven automation for finance
+- Delivered 95% value realization on a 4-country treasury integration
+- Cut client onboarding time by 60% using RPA bots
 
 
 **Gaps to address.**
-- Limited direct experience automating the software development lifecycle itself (e.g., defect remediation, testing, release engineering)
-- No explicit mention of experience with "agentic AI systems" in an SDLC context
+- Job description lacks specific technical requirements beyond the title
+- No mention of specific automation platforms or AI frameworks used by the company
+- The company's mission statement is non-technical, offering no insight into the engineering culture
 
 
 **Red flags.**
-- Job is on-site in Canada, but no mention of visa sponsorship or relocation assistance
+- No mention of visa sponsorship or global hiring for a US-based remote role
 
 
 
 ---
 
-### 2. Senior AI Engineer, PA Consulting
+### 2. Generative AI Automation Engineer - Remote Job, EnthuZiastic
 
-- **Location:** UK, Northern Ireland, Belfast
-- **Posted:** 17 days ago
+- **Location:** US, Rhode Island, Providence County, Providence (remote)
+- **Posted:** 10 month(s) ago
 - **Source:** adzuna
 - **Fit score:** 0.80
 - **Sponsorship signal:** unclear
-- **Apply:** [https://www.adzuna.co.uk/jobs/land/ad/5895564004?se=ovGrd2zF8RGRs48L_-pA7w&utm_medium=api&utm_source=3a0e1b6c&v=55A496FEB81AB5DB27647D7568355FA631E0F89D](https://www.adzuna.co.uk/jobs/land/ad/5895564004?se=ovGrd2zF8RGRs48L_-pA7w&utm_medium=api&utm_source=3a0e1b6c&v=55A496FEB81AB5DB27647D7568355FA631E0F89D)
+- **Apply:** [https://www.adzuna.com/details/5528384725?utm_medium=api&utm_source=3a0e1b6c](https://www.adzuna.com/details/5528384725?utm_medium=api&utm_source=3a0e1b6c)
 - **Tailored CV:** _not generated_
 
 
-**Why apply.** Your experience building production LLM workflows with Gemini API and Google AI Studio, along with Python and Azure AI Services, directly aligns with an AI Engineer role. Your background in finance operations automation, including KYC/AML and loan underwriting, provides valuable domain expertise.
+**Why apply.** This role directly matches your Generative AI and automation development skills, including experience with Gemini API and UiPath. It is a remote position, aligning with your target job search.
 
 **Strengths matched.**
-- Production LLM workflows using Gemini API and Google AI Studio
-- Python, Azure AI Services, and NLP for real-time classification
-- 6+ years building RPA and AI-driven process automation
-- Experience with SDLC, Agile, and UAT in finance operations
+- Generative AI experience (Gemini API, Google AI Studio, OpenAI API)
+- Extensive automation development (UiPath, Power Automate, Python)
+- Seniority and leadership in complex, multi-country projects
+- Quantifiable impact (95% value realization, 60% onboarding time cut)
 
 
 **Gaps to address.**
-- Job description does not explicitly mention UiPath or Power Automate
+- Specific technical requirements beyond 'Generative AI Automation Engineer' are not detailed in the job description
 
 
 **Red flags.**
-- Job description does not mention visa sponsorship or relocation support
+- Extremely vague job description
+- No mention of visa sponsorship or global hiring
 
 
 
 ---
 
-### 3. Generative AI Automation Engineer - Remote Job, EnthuZiastic
+### 3. AI Automation Engineer, System One
 
-- **Location:** US, Michigan, Macomb County, Warren (remote)
-- **Posted:** 10 month(s) ago
+- **Location:** US, Virginia, Fairfax County, Vienna (remote)
+- **Posted:** 5 days ago
 - **Source:** adzuna
 - **Fit score:** 0.75
-- **Sponsorship signal:** unclear
-- **Apply:** [https://www.adzuna.com/land/ad/5528384771?se=Bp4tkGzF8RGRs48L_-pA7w&utm_medium=api&utm_source=3a0e1b6c&v=4B05646A6E1B818044FDEA162713F55DE8D163C2](https://www.adzuna.com/land/ad/5528384771?se=Bp4tkGzF8RGRs48L_-pA7w&utm_medium=api&utm_source=3a0e1b6c&v=4B05646A6E1B818044FDEA162713F55DE8D163C2)
+- **Sponsorship signal:** no
+- **Apply:** [https://www.adzuna.com/land/ad/5914271426?se=1gU3U0nG8RGnd9fxutKEAA&utm_medium=api&utm_source=3a0e1b6c&v=792CE9BF6228B03BDBAA8F5509819CD6E06AAC0B](https://www.adzuna.com/land/ad/5914271426?se=1gU3U0nG8RGnd9fxutKEAA&utm_medium=api&utm_source=3a0e1b6c&v=792CE9BF6228B03BDBAA8F5509819CD6E06AAC0B)
 - **Tailored CV:** _not generated_
 
 
-**Why apply.** Your background in building LLM workflows with Gemini API and Google AI Studio, combined with extensive RPA experience, directly matches the 'Generative AI Automation Engineer' title. You have concrete experience in finance operations automation, which is a valuable domain. This role aligns well with your target for senior remote positions.
+**Why apply.** Your experience building production LLM workflows using Gemini API and Google AI Studio directly applies to testing generative and predictive AI. Your background in automation and UAT, including error handling and audit trails, is relevant for creating automated test suites and evaluation pipelines.
 
 **Strengths matched.**
-- Generative AI experience (Gemini API, Google AI Studio, LLM workflows)
-- Automation expertise (UiPath, Power Automate, Python)
-- Finance domain knowledge (KYC/AML, loan underwriting, treasury integration)
-- Project leadership (4-country integration, 95% value realization)
+- Production LLM workflow experience using Gemini API and Google AI Studio
+- Strong background in automation and AI-driven process delivery
+- Experience with UAT, error handling, and sprint validations
+- Proficiency in Python and Azure AI Services
 
 
 **Gaps to address.**
-- Specific tools or platforms mentioned in the full job description are unknown
-- No explicit mention of global remote hiring or visa sponsorship
+- Limited explicit experience designing dedicated AI testing and evaluation frameworks
+- Job is a contract role, which may not align with long-term career or sponsorship needs
+- Ambiguity regarding remote work model (hybrid vs. fully remote)
 
 
 **Red flags.**
-- Job description is severely truncated, making a full assessment impossible
-- No mention of visa sponsorship or global hiring for a US-based remote role
+- No mention of visa sponsorship or relocation
+- "Contract Work Model" typically does not offer sponsorship
+- Conflicting information on remote work (posting says "True", description says "Hybrid - onsite and remote")
+- Discrepancy in job title ("AI Automation Engineer" vs. "AI Test Engineer")
 
 
 
@@ -132,32 +138,31 @@ Thresholds: heuristic >= 0.4, apply-ready >= 0.7.
 
 ### 4. Generative AI Automation Engineer - Remote Job, EnthuZiastic
 
-- **Location:** US, Maryland, Montgomery County, Gaithersburg (remote)
+- **Location:** US, Wisconsin, Walworth County, Whitewater (remote)
 - **Posted:** 10 month(s) ago
 - **Source:** adzuna
 - **Fit score:** 0.75
 - **Sponsorship signal:** unclear
-- **Apply:** [https://www.adzuna.com/land/ad/5528384742?se=Bp4tkGzF8RGRs48L_-pA7w&utm_medium=api&utm_source=3a0e1b6c&v=7FBEB0287F155FE33D0813B4DCBE01F70FC99DBA](https://www.adzuna.com/land/ad/5528384742?se=Bp4tkGzF8RGRs48L_-pA7w&utm_medium=api&utm_source=3a0e1b6c&v=7FBEB0287F155FE33D0813B4DCBE01F70FC99DBA)
+- **Apply:** [https://www.adzuna.com/details/5528384747?utm_medium=api&utm_source=3a0e1b6c](https://www.adzuna.com/details/5528384747?utm_medium=api&utm_source=3a0e1b6c)
 - **Tailored CV:** _not generated_
 
 
-**Why apply.** Your experience building production LLM workflows with Gemini API and Google AI Studio, combined with 6+ years in RPA and AI automation, makes you a strong candidate for a Generative AI Automation Engineer role. This remote position also aligns with your job search.
+**Why apply.** Your background in building production LLM workflows with Gemini API and Google AI Studio, combined with 6+ years in RPA and AI automation, aligns well with a Generative AI Automation Engineer role. This remote position also matches your target for flexible work.
 
 **Strengths matched.**
-- Production LLM workflows (Gemini API, Google AI Studio)
-- 6+ years building RPA and AI-driven process automation
-- UiPath and Power Automate certifications
-- Quantifiable impact (95% value realization, 60% onboarding time cut)
+- 6+ years in RPA and AI-driven process automation
+- Production LLM workflows using Gemini API and Google AI Studio
+- UiPath (Advanced Certified) and Power Automate expertise
+- Python, Microsoft Graph API, Azure AI Services
 
 
 **Gaps to address.**
-- Job description lacks specific tool requirements
-- No explicit mention of finance or banking domain
+- Job description lacks specific technical requirements or project details
 
 
 **Red flags.**
-- Extremely vague job description, no details on responsibilities or tech stack
-- No mention of visa sponsorship or global hiring
+- Job description is extremely vague, mostly a mission statement
+- No mention of visa sponsorship or global hiring for a remote role
 
 
 
@@ -165,25 +170,45 @@ Thresholds: heuristic >= 0.4, apply-ready >= 0.7.
 
 ### 5. Generative AI Automation Engineer - Remote Job, EnthuZiastic
 
-- **Location:** US, Indiana, Lake County, Gary (remote)
+- **Location:** US, New Jersey, Middlesex County, New Brunswick (remote)
 - **Posted:** 10 month(s) ago
 - **Source:** adzuna
-- **Fit score:** 0.72
-- **Sponsorship signal:** -
-- **Apply:** [https://www.adzuna.com/land/ad/5528384757?se=Bp4tkGzF8RGRs48L_-pA7w&utm_medium=api&utm_source=3a0e1b6c&v=56137A812FE818094C2E6E8FBCB2D89AA766EAC2](https://www.adzuna.com/land/ad/5528384757?se=Bp4tkGzF8RGRs48L_-pA7w&utm_medium=api&utm_source=3a0e1b6c&v=56137A812FE818094C2E6E8FBCB2D89AA766EAC2)
+- **Fit score:** 0.75
+- **Sponsorship signal:** unclear
+- **Apply:** [https://www.adzuna.com/details/5528384798?utm_medium=api&utm_source=3a0e1b6c](https://www.adzuna.com/details/5528384798?utm_medium=api&utm_source=3a0e1b6c)
 - **Tailored CV:** _not generated_
+
+
+**Why apply.** This role aligns well with your experience building production LLM workflows using Gemini API and Google AI Studio for automation. Your background in RPA with UiPath and Power Automate, combined with Python skills, directly supports a Generative AI Automation Engineer position. You have a strong track record of delivering quantifiable results in similar areas.
+
+**Strengths matched.**
+- Generative AI development (Gemini API, Google AI Studio)
+- Advanced RPA skills (UiPath, Power Automate)
+- Python for automation and data processing
+- Quantifiable project impact (95% value realization, 60% time reduction)
+- Senior-level experience leading full SDLC
+
+
+**Gaps to address.**
+- Job description lacks specific tool requirements, making a precise technical match difficult
+
+
+**Red flags.**
+- Job description is extremely vague, lacking details on responsibilities or required technologies
+- No mention of visa sponsorship or global remote work policy
+
 
 
 ---
 
 ### 6. Generative AI Automation Engineer - Remote Job, EnthuZiastic
 
-- **Location:** US, Pennsylvania, Lehigh County, Allentown (remote)
+- **Location:** US, Virginia, Richmond County, Richmond (remote)
 - **Posted:** 10 month(s) ago
 - **Source:** adzuna
 - **Fit score:** 0.72
 - **Sponsorship signal:** -
-- **Apply:** [https://www.adzuna.com/land/ad/5528384755?se=Bp4tkGzF8RGRs48L_-pA7w&utm_medium=api&utm_source=3a0e1b6c&v=53C252F540F8D98FA87ABEE66773727C56DDC1B5](https://www.adzuna.com/land/ad/5528384755?se=Bp4tkGzF8RGRs48L_-pA7w&utm_medium=api&utm_source=3a0e1b6c&v=53C252F540F8D98FA87ABEE66773727C56DDC1B5)
+- **Apply:** [https://www.adzuna.com/details/5528384776?utm_medium=api&utm_source=3a0e1b6c](https://www.adzuna.com/details/5528384776?utm_medium=api&utm_source=3a0e1b6c)
 - **Tailored CV:** _not generated_
 
 
@@ -191,12 +216,12 @@ Thresholds: heuristic >= 0.4, apply-ready >= 0.7.
 
 ### 7. Generative AI Automation Engineer - Remote Job, EnthuZiastic
 
-- **Location:** US, Kentucky, Fayette County, Lexington (remote)
+- **Location:** US, Indiana, St. Joseph County, South Bend (remote)
 - **Posted:** 10 month(s) ago
 - **Source:** adzuna
 - **Fit score:** 0.72
 - **Sponsorship signal:** -
-- **Apply:** [https://www.adzuna.com/land/ad/5528384727?se=Bp4tkGzF8RGRs48L_-pA7w&utm_medium=api&utm_source=3a0e1b6c&v=EC4D966A680DFF9C823905363755C4FBBE69FD0F](https://www.adzuna.com/land/ad/5528384727?se=Bp4tkGzF8RGRs48L_-pA7w&utm_medium=api&utm_source=3a0e1b6c&v=EC4D966A680DFF9C823905363755C4FBBE69FD0F)
+- **Apply:** [https://www.adzuna.com/details/5528384778?utm_medium=api&utm_source=3a0e1b6c](https://www.adzuna.com/details/5528384778?utm_medium=api&utm_source=3a0e1b6c)
 - **Tailored CV:** _not generated_
 
 
@@ -207,25 +232,25 @@ Thresholds: heuristic >= 0.4, apply-ready >= 0.7.
 
 
 
-- **Method-Resourcing**, Senior AI Automation Engineer £100,000-£120,000 (0.68): no deep score [link](https://www.adzuna.co.uk/jobs/land/ad/5921798112?se=pMPpdGzF8RG2coj_4smAOQ&utm_medium=api&utm_source=3a0e1b6c&v=A7BA1D1353D2C5FCD6712218FDA9D9A3CD6D0C23)
+- **Method-Resourcing**, Senior AI Automation Engineer £100,000-£120,000 (0.68): no deep score [link](https://www.adzuna.co.uk/jobs/land/ad/5921798112?se=GmppN0nG8RGWsPUaVM20eg&utm_medium=api&utm_source=3a0e1b6c&v=A7BA1D1353D2C5FCD6712218FDA9D9A3CD6D0C23)
 
-- **Method Resourcing**, Senior AI Automation Engineer | £100,000-£120,000 (0.68): no deep score [link](https://www.adzuna.co.uk/jobs/land/ad/5916803814?se=pMPpdGzF8RG2coj_4smAOQ&utm_medium=api&utm_source=3a0e1b6c&v=4EBBE8BF147C1A5758433FBC0D3BA869B607EF89)
+- **Method Resourcing**, Senior AI Automation Engineer | £100,000-£120,000 (0.68): no deep score [link](https://www.adzuna.co.uk/jobs/land/ad/5916803814?se=GmppN0nG8RGWsPUaVM20eg&utm_medium=api&utm_source=3a0e1b6c&v=4EBBE8BF147C1A5758433FBC0D3BA869B607EF89)
 
-- **Method Resourcing**, Senior AI Automation Engineer | £100,000-£120,000 (0.68): no deep score [link](https://www.adzuna.co.uk/jobs/land/ad/5916803825?se=pMPpdGzF8RG2coj_4smAOQ&utm_medium=api&utm_source=3a0e1b6c&v=44BC0D1FF3C552265CD248CDD8B2095FCBBFEDA2)
+- **Method Resourcing**, Senior AI Automation Engineer | £100,000-£120,000 (0.68): no deep score [link](https://www.adzuna.co.uk/jobs/land/ad/5916803825?se=GmppN0nG8RGWsPUaVM20eg&utm_medium=api&utm_source=3a0e1b6c&v=44BC0D1FF3C552265CD248CDD8B2095FCBBFEDA2)
 
-- **Method-Resourcing**, Senior AI Automation Engineer £100,000-£120,000 (0.68): no deep score [link](https://www.adzuna.co.uk/jobs/land/ad/5921798112?se=uCMBdmzF8RG_59bpLSVmjQ&utm_medium=api&utm_source=3a0e1b6c&v=A7BA1D1353D2C5FCD6712218FDA9D9A3CD6D0C23)
+- **Method-Resourcing**, Senior AI Automation Engineer £100,000-£120,000 (0.68): no deep score [link](https://www.adzuna.co.uk/jobs/land/ad/5921798112?se=UkppOEnG8RGnd9fxutKEAA&utm_medium=api&utm_source=3a0e1b6c&v=A7BA1D1353D2C5FCD6712218FDA9D9A3CD6D0C23)
 
-- **Resilience Care**, Backend & Applied AI Engineer (0.66): no deep score [link](https://www.arbeitnow.fr/jobs/companies/resilience-care/backend-applied-ai-engineer-paris-478113)
+- **gitlab**, Backend Engineer (Python),AI Engineering: Agent Foundations (0.66): no deep score [link](https://www.arbeitnow.co.uk/jobs/companies/gitlab/remote-backend-engineer-pythonai-engineering-agent-foundations-499521)
 
-- **ElevenLabs**, Applied AI Engineer (0.66): no deep score [link](https://www.arbeitnow.ch/jobs/companies/elevenlabs/remote-applied-ai-engineer-404690)
+- **EY UK**, Manager - Microsoft Power Platform - AI & Data - Technology Consulting - Belfast (0.66): no deep score [link](https://www.adzuna.co.uk/jobs/land/ad/5920517015?se=UkppOEnG8RGnd9fxutKEAA&utm_medium=api&utm_source=3a0e1b6c&v=25022A00AB33D1CF42077DA2EC00C802FFF82C7E)
 
-- **CBSbutler Holdings Limited trading as CBSbutler**, Cyber AI Engineer - Remote (0.66): no deep score [link](https://www.adzuna.co.uk/jobs/land/ad/5893051260?se=xDqDdmzF8RG2coj_4smAOQ&utm_medium=api&utm_source=3a0e1b6c&v=AB968453B59A182830897D68AA4ADA019D58918B)
+- **CBSbutler Holdings Limited trading as CBSbutler**, Cyber AI Engineer - Remote (0.66): no deep score [link](https://www.adzuna.co.uk/jobs/land/ad/5893051260?se=1AL3OEnG8RGfvO-Bhf44AA&utm_medium=api&utm_source=3a0e1b6c&v=AB968453B59A182830897D68AA4ADA019D58918B)
 
-- **Computer Futures**, SC Cleared AI Engineer (0.66): no deep score [link](https://www.adzuna.co.uk/jobs/land/ad/5919237386?se=xDqDdmzF8RG2coj_4smAOQ&utm_medium=api&utm_source=3a0e1b6c&v=2D7C8FD9FD915B159B2AAB95C93574939EBBF5AA)
+- **Computer Futures**, SC Cleared AI Engineer (0.66): no deep score [link](https://www.adzuna.co.uk/jobs/land/ad/5919237386?se=1AL3OEnG8RGfvO-Bhf44AA&utm_medium=api&utm_source=3a0e1b6c&v=2D7C8FD9FD915B159B2AAB95C93574939EBBF5AA)
 
-- **VERTECH GROUP  LTD**, Automation Engineer - Remote (0.66): no deep score [link](https://www.adzuna.co.uk/jobs/land/ad/5903978696?se=YIUtd2zF8RG2coj_4smAOQ&utm_medium=api&utm_source=3a0e1b6c&v=7622D03E29C04E40064CC492AB72D3F673C1A0D5)
+- **VERTECH GROUP  LTD**, Automation Engineer - Remote (0.66): no deep score [link](https://www.adzuna.co.uk/jobs/land/ad/5903978696?se=QJNZOUnG8RGfvO-Bhf44AA&utm_medium=api&utm_source=3a0e1b6c&v=7622D03E29C04E40064CC492AB72D3F673C1A0D5)
 
-- **Microtech Global Ltd**, Storage Automation Engineer (0.66): no deep score [link](https://www.adzuna.co.uk/jobs/land/ad/5903978773?se=YIUtd2zF8RG2coj_4smAOQ&utm_medium=api&utm_source=3a0e1b6c&v=A966C3F4F1BEC540ACDA2338CEE283E40B39E98F)
+- **Microtech Global Ltd**, Storage Automation Engineer (0.66): no deep score [link](https://www.adzuna.co.uk/jobs/land/ad/5903978773?se=QJNZOUnG8RGfvO-Bhf44AA&utm_medium=api&utm_source=3a0e1b6c&v=A966C3F4F1BEC540ACDA2338CEE283E40B39E98F)
 
 
 
@@ -233,18 +258,18 @@ Thresholds: heuristic >= 0.4, apply-ready >= 0.7.
 
 | Source | Status | Count | Duration | Error |
 |--------|--------|-------|----------|-------|
-| greenhouse | FAIL | 0 | 4.65s | GET https://boards-api.greenhouse.io/v1/boards/deel/jobs failed after 3 attempts: Client error '404 Not Found' for url 'https://boards-api.greenhouse.io/v1/boards/deel/jobs?content=true'
+| greenhouse | FAIL | 0 | 4.69s | GET https://boards-api.greenhouse.io/v1/boards/deel/jobs failed after 3 attempts: Client error '404 Not Found' for url 'https://boards-api.greenhouse.io/v1/boards/deel/jobs?content=true'
 For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 |
-| lever | FAIL | 0 | 5.8s | GET https://api.lever.co/v0/postings/figma failed after 3 attempts: Client error '404 Not Found' for url 'https://api.lever.co/v0/postings/figma?mode=json'
+| lever | FAIL | 0 | 4.06s | GET https://api.lever.co/v0/postings/figma failed after 3 attempts: Client error '404 Not Found' for url 'https://api.lever.co/v0/postings/figma?mode=json'
 For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 |
-| ashby | FAIL | 0 | 4.4s | GET https://api.ashbyhq.com/posting-api/job-board/arc failed after 3 attempts: Client error '404 Not Found' for url 'https://api.ashbyhq.com/posting-api/job-board/arc?includeCompensation=true'
+| ashby | FAIL | 0 | 5.35s | GET https://api.ashbyhq.com/posting-api/job-board/arc failed after 3 attempts: Client error '404 Not Found' for url 'https://api.ashbyhq.com/posting-api/job-board/arc?includeCompensation=true'
 For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 |
-| workable | ok | 0 | 0.22s |  |
-| personio | ok | 0 | 0.89s |  |
-| remotive | ok | 18 | 0.61s |  |
-| arbeitnow | ok | 325 | 0.33s |  |
-| adzuna | ok | 1501 | 51.32s |  |
-| hn_whoishiring | ok | 51 | 2.6s |  |
+| workable | ok | 0 | 0.25s |  |
+| personio | ok | 0 | 0.91s |  |
+| remotive | ok | 15 | 1.28s |  |
+| arbeitnow | ok | 325 | 0.62s |  |
+| adzuna | ok | 1498 | 53.25s |  |
+| hn_whoishiring | ok | 51 | 2.53s |  |
 
 
 _This brief was produced by the JobHunt pipeline. It does not submit applications. Verify UK sponsorship claims on the GOV.UK Licensed Sponsor Register before applying._
