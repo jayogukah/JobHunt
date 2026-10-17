@@ -1,0 +1,68 @@
+{
+  "run_date": "2026-10-17",
+  "total_fetched": 1851,
+  "total_scored": 25,
+  "heuristic_passed": 516,
+  "gemini_scored": 25,
+  "top_n": 7,
+  "min_heuristic": 0.4,
+  "min_final": 0.7,
+  "duration_s": 1232.59,
+  "partial_reason": "time_budget_exceeded after 28/40 LLM scores (elapsed 1233s > budget 1200s)",
+  "sources": {
+    "greenhouse": {
+      "count": 0,
+      "status": "failed",
+      "duration_s": 4.45,
+      "error": "GET https://boards-api.greenhouse.io/v1/boards/deel/jobs failed after 3 attempts: Client error '404 Not Found' for url 'https://boards-api.greenhouse.io/v1/boards/deel/jobs?content=true'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+    },
+    "lever": {
+      "count": 0,
+      "status": "failed",
+      "duration_s": 4.56,
+      "error": "GET https://api.lever.co/v0/postings/figma failed after 3 attempts: Client error '404 Not Found' for url 'https://api.lever.co/v0/postings/figma?mode=json'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+    },
+    "ashby": {
+      "count": 0,
+      "status": "failed",
+      "duration_s": 4.24,
+      "error": "GET https://api.ashbyhq.com/posting-api/job-board/arc failed after 3 attempts: Client error '404 Not Found' for url 'https://api.ashbyhq.com/posting-api/job-board/arc?includeCompensation=true'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+    },
+    "workable": {
+      "count": 0,
+      "status": "ok",
+      "duration_s": 0.07,
+      "error": null
+    },
+    "personio": {
+      "count": 0,
+      "status": "ok",
+      "duration_s": 0.51,
+      "error": null
+    },
+    "remotive": {
+      "count": 13,
+      "status": "ok",
+      "duration_s": 0.44,
+      "error": null
+    },
+    "arbeitnow": {
+      "count": 300,
+      "status": "ok",
+      "duration_s": 0.34,
+      "error": null
+    },
+    "adzuna": {
+      "count": 1487,
+      "status": "ok",
+      "duration_s": 64.69,
+      "error": null
+    },
+    "hn_whoishiring": {
+      "count": 51,
+      "status": "ok",
+      "duration_s": 2.17,
+      "error": null
+    }
+  }
+}
