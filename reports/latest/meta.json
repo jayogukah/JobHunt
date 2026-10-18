@@ -1,14 +1,14 @@
 {
-  "run_date": "2026-10-17",
-  "total_fetched": 1851,
-  "total_scored": 25,
-  "heuristic_passed": 516,
-  "gemini_scored": 25,
-  "top_n": 7,
+  "run_date": "2026-10-18",
+  "total_fetched": 1854,
+  "total_scored": 21,
+  "heuristic_passed": 508,
+  "gemini_scored": 21,
+  "top_n": 2,
   "min_heuristic": 0.4,
   "min_final": 0.7,
-  "duration_s": 1232.59,
-  "partial_reason": "time_budget_exceeded after 28/40 LLM scores (elapsed 1233s > budget 1200s)",
+  "duration_s": 1228.75,
+  "partial_reason": "time_budget_exceeded after 26/40 LLM scores (elapsed 1229s > budget 1200s)",
   "sources": {
     "greenhouse": {
       "count": 0,
@@ -19,49 +19,49 @@
     "lever": {
       "count": 0,
       "status": "failed",
-      "duration_s": 4.56,
+      "duration_s": 3.85,
       "error": "GET https://api.lever.co/v0/postings/figma failed after 3 attempts: Client error '404 Not Found' for url 'https://api.lever.co/v0/postings/figma?mode=json'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
     },
     "ashby": {
       "count": 0,
       "status": "failed",
-      "duration_s": 4.24,
+      "duration_s": 4.39,
       "error": "GET https://api.ashbyhq.com/posting-api/job-board/arc failed after 3 attempts: Client error '404 Not Found' for url 'https://api.ashbyhq.com/posting-api/job-board/arc?includeCompensation=true'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
     },
     "workable": {
       "count": 0,
       "status": "ok",
-      "duration_s": 0.07,
+      "duration_s": 0.19,
       "error": null
     },
     "personio": {
       "count": 0,
       "status": "ok",
-      "duration_s": 0.51,
+      "duration_s": 0.61,
       "error": null
     },
     "remotive": {
-      "count": 13,
+      "count": 12,
       "status": "ok",
-      "duration_s": 0.44,
+      "duration_s": 0.47,
       "error": null
     },
     "arbeitnow": {
       "count": 300,
       "status": "ok",
-      "duration_s": 0.34,
+      "duration_s": 0.29,
       "error": null
     },
     "adzuna": {
-      "count": 1487,
+      "count": 1491,
       "status": "ok",
-      "duration_s": 64.69,
+      "duration_s": 52.66,
       "error": null
     },
     "hn_whoishiring": {
       "count": 51,
       "status": "ok",
-      "duration_s": 2.17,
+      "duration_s": 2.6,
       "error": null
     }
   }
