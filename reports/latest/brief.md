@@ -1,6 +1,6 @@
-# JobHunt brief, 2026-11-15
+# JobHunt brief, 2026-11-16
 
-> **PARTIAL RUN.** time_budget_exceeded after 29/40 LLM scores (elapsed 1284s > budget 1200s).
+> **PARTIAL RUN.** time_budget_exceeded after 27/40 LLM scores (elapsed 1251s > budget 1200s).
 > The pipeline did not fully complete, so the picks below are based on
 > whatever scoring finished. Heuristic-only jobs are marked.
 
@@ -8,11 +8,11 @@
 ## Run summary
 
 - Sources run: **9**
-- Jobs fetched: **1886** (856 fresh, 1030 previously seen)
-- Passed heuristic prefilter: **441** of 856
-- Deep-scored with Gemini: **26**
+- Jobs fetched: **1888** (850 fresh, 1038 previously seen)
+- Passed heuristic prefilter: **432** of 850
+- Deep-scored with Gemini: **22**
 - Selected for tailoring: **7**
-- Wall time: **1284.0s**
+- Wall time: **1251.2s**
 
 Thresholds: heuristic >= 0.4, apply-ready >= 0.7.
 
@@ -21,247 +21,246 @@ Thresholds: heuristic >= 0.4, apply-ready >= 0.7.
 
 | # | Company | Role | Location | Remote | Fit | Sponsorship | Apply |
 |---|---------|------|----------|--------|-----|-------------|-------|
-| 1 | Apex Systems | Intelligent Automation Engineer | US, Kentucky, Jefferson County, Louisville | yes | 0.90 | no | [link](https://www.adzuna.com/land/ad/5960292401?se=2BjUgfjg8RG3UKJUaLg__w&utm_medium=api&utm_source=3a0e1b6c&v=77E1BE668F29C6FB8C05A28C257966A5E5997C59) |
-| 2 | Harvey Nash | AI Automation Engineer | UK, Eastern England, Hertfordshire, Welwyn, Digswell | yes | 0.88 | unclear | [link](https://www.adzuna.co.uk/jobs/land/ad/5960369215?se=yBczYfjg8RGDtoxXJCvQRQ&utm_medium=api&utm_source=3a0e1b6c&v=35124F5D89EB0AB89151CD24916F2DD49241CB92) |
-| 3 | Harvey Nash | AI Automation Engineer | UK, Eastern England, Hertfordshire, Welwyn, Digswell | yes | 0.85 | no | [link](https://www.adzuna.co.uk/jobs/land/ad/5960369215?se=gJCbXvjg8RG-OM-EW4yB6g&utm_medium=api&utm_source=3a0e1b6c&v=35124F5D89EB0AB89151CD24916F2DD49241CB92) |
-| 4 | Stratospherec Ltd | AI Automation Engineer | UK, London, Central London, Farringdon | yes | 0.85 | unclear | [link](https://www.adzuna.co.uk/jobs/land/ad/5935449036?se=gJCbXvjg8RG-OM-EW4yB6g&utm_medium=api&utm_source=3a0e1b6c&v=2FBC51A8B51104E669136776DEB86B5BEA9DD868) |
-| 5 | Harvey Nash | AI Automation Engineer | UK, Eastern England, Hertfordshire, Welwyn Garden City | yes | 0.85 | no | [link](https://www.adzuna.co.uk/jobs/land/ad/5959304495?se=gJCbXvjg8RG-OM-EW4yB6g&utm_medium=api&utm_source=3a0e1b6c&v=F77B46428F18DF65F61506A124E53ADE09691981) |
-| 6 | Harvey Nash | AI Automation Engineer | UK, Eastern England, Hertfordshire, Welwyn Garden City | yes | 0.85 | unclear | [link](https://www.adzuna.co.uk/jobs/land/ad/5959304495?se=bJGOYPjg8RGjUublSsmu9w&utm_medium=api&utm_source=3a0e1b6c&v=F77B46428F18DF65F61506A124E53ADE09691981) |
-| 7 | Harvey Nash | AI Automation Engineer | UK, Eastern England, Hertfordshire, Welwyn, Digswell | yes | 0.85 | unclear | [link](https://www.adzuna.co.uk/jobs/land/ad/5960369215?se=-moCYvjg8RG3UKJUaLg__w&utm_medium=api&utm_source=3a0e1b6c&v=35124F5D89EB0AB89151CD24916F2DD49241CB92) |
+| 1 | Method-Resourcing | Senior AI Automation Engineer £100,000-£120,000 | UK, West Midlands, Birmingham, Balsall Heath | ? | 0.95 | unclear | [link](https://www.adzuna.co.uk/jobs/land/ad/5921798112?se=gtPOGs3h8RGw0b4I0aGXyw&utm_medium=api&utm_source=3a0e1b6c&v=A7BA1D1353D2C5FCD6712218FDA9D9A3CD6D0C23) |
+| 2 | Method-Resourcing | Senior AI Automation Engineer £100,000-£120,000 | UK, West Midlands, Birmingham, Balsall Heath | ? | 0.90 | unclear | [link](https://www.adzuna.co.uk/jobs/land/ad/5921798112?se=8NuxG83h8RGw0b4I0aGXyw&utm_medium=api&utm_source=3a0e1b6c&v=A7BA1D1353D2C5FCD6712218FDA9D9A3CD6D0C23) |
+| 3 | Inato | Senior AI Engineer | PARIS OFFICE or REMOTE FROM FRANCE | yes | 0.85 | no | [link](https://www.arbeitnow.fr/jobs/companies/inato/remote-senior-ai-engineer-344791) |
+| 4 | Apex Systems | Intelligent Automation Engineer | US, Kentucky, Jefferson County, Louisville | yes | 0.85 | unclear | [link](https://www.adzuna.com/land/ad/5960292401?se=1AGMPM3h8RG21d2WBdpE_g&utm_medium=api&utm_source=3a0e1b6c&v=77E1BE668F29C6FB8C05A28C257966A5E5997C59) |
+| 5 | Stratospherec Ltd | AI Automation Engineer | UK, London, Central London, Farringdon | yes | 0.80 | unclear | [link](https://www.adzuna.co.uk/jobs/land/ad/5935449036?se=gtPOGs3h8RGw0b4I0aGXyw&utm_medium=api&utm_source=3a0e1b6c&v=2FBC51A8B51104E669136776DEB86B5BEA9DD868) |
+| 6 | MCS Group | Lead AI Engineer | UK, Northern Ireland, Belfast | ? | 0.80 | unclear | [link](https://www.adzuna.co.uk/jobs/land/ad/5956030567?se=8kM8Hc3h8RGw0b4I0aGXyw&utm_medium=api&utm_source=3a0e1b6c&v=5F0DA9797340EAC4355A8AFEFB0A3628AC888C1A) |
+| 7 | EMBS Engineering | Agentic AI Engineering, Data & Technology | UK | yes | 0.75 | unclear | [link](https://www.adzuna.co.uk/jobs/land/ad/5959579078?se=auxAG83h8RGDL_33h7qJHQ&utm_medium=api&utm_source=3a0e1b6c&v=61C6CD299256FEB7A91CA465EBCBD4699ADC6DD5) |
 
 
 
 ## Per-job detail
 
 
-### 1. Intelligent Automation Engineer, Apex Systems
+### 1. Senior AI Automation Engineer £100,000-£120,000, Method-Resourcing
 
-- **Location:** US, Kentucky, Jefferson County, Louisville (remote)
-- **Posted:** 5 days ago
+- **Location:** UK, West Midlands, Birmingham, Balsall Heath
+- **Posted:** 1 month(s) ago
+- **Source:** adzuna
+- **Fit score:** 0.95
+- **Sponsorship signal:** unclear
+- **Apply:** [https://www.adzuna.co.uk/jobs/land/ad/5921798112?se=gtPOGs3h8RGw0b4I0aGXyw&utm_medium=api&utm_source=3a0e1b6c&v=A7BA1D1353D2C5FCD6712218FDA9D9A3CD6D0C23](https://www.adzuna.co.uk/jobs/land/ad/5921798112?se=gtPOGs3h8RGw0b4I0aGXyw&utm_medium=api&utm_source=3a0e1b6c&v=A7BA1D1353D2C5FCD6712218FDA9D9A3CD6D0C23)
+- **Tailored CV:** _not generated_
+
+
+**Why apply.** Your 6+ years in AI-driven automation, especially with Python and Power Platform, directly match this role's requirements. Experience delivering production LLM workflows and enterprise automation for finance operations is a strong fit.
+
+**Strengths matched.**
+- Seniority matches job title
+- Python, Power Platform, and AI automation skills align directly
+- Experience delivering production LLM workflows using Gemini API and Google AI Studio
+- 6+ years automating finance and banking operations in enterprise settings
+- UiPath and Power Automate certifications are relevant
+
+
+**Gaps to address.**
+- No significant technical gaps identified
+
+
+**Red flags.**
+- Job is hybrid (3 days in office) in the UK
+- No mention of visa sponsorship or relocation support
+- Candidate is in Nigeria and requires sponsorship and relocation
+
+
+
+---
+
+### 2. Senior AI Automation Engineer £100,000-£120,000, Method-Resourcing
+
+- **Location:** UK, West Midlands, Birmingham, Balsall Heath
+- **Posted:** 1 month(s) ago
 - **Source:** adzuna
 - **Fit score:** 0.90
-- **Sponsorship signal:** no
-- **Apply:** [https://www.adzuna.com/land/ad/5960292401?se=2BjUgfjg8RG3UKJUaLg__w&utm_medium=api&utm_source=3a0e1b6c&v=77E1BE668F29C6FB8C05A28C257966A5E5997C59](https://www.adzuna.com/land/ad/5960292401?se=2BjUgfjg8RG3UKJUaLg__w&utm_medium=api&utm_source=3a0e1b6c&v=77E1BE668F29C6FB8C05A28C257966A5E5997C59)
-- **Tailored CV:** _not generated_
-
-
-**Why apply.** Your extensive experience with UiPath, Power Automate, Python, and AI platforms like Gemini API directly matches the core requirements for an Intelligent Automation Engineer. You have a strong background in building and delivering scalable enterprise solutions, which is a key aspect of this role.
-
-**Strengths matched.**
-- UiPath (Advanced Certified) and Power Automate (Certified) align with automation needs.
-- Gemini API, Google AI Studio, Azure AI Services, and OpenAI API experience matches AI/copilot requirements.
-- 6+ years of end-to-end SDLC delivery, including testing, code reviews, and production support.
-- Experience building scalable enterprise solutions for finance and banking operations.
-
-
-**Gaps to address.**
-- Specific experience with Copilot Studio beyond general AI workflows is not detailed.
-
-
-**Red flags.**
-- Job is remote in the US (Louisville, Kentucky) with no mention of visa sponsorship or international hiring.
-
-
-
----
-
-### 2. AI Automation Engineer, Harvey Nash
-
-- **Location:** UK, Eastern England, Hertfordshire, Welwyn, Digswell (remote)
-- **Posted:** 5 days ago
-- **Source:** adzuna
-- **Fit score:** 0.88
 - **Sponsorship signal:** unclear
-- **Apply:** [https://www.adzuna.co.uk/jobs/land/ad/5960369215?se=yBczYfjg8RGDtoxXJCvQRQ&utm_medium=api&utm_source=3a0e1b6c&v=35124F5D89EB0AB89151CD24916F2DD49241CB92](https://www.adzuna.co.uk/jobs/land/ad/5960369215?se=yBczYfjg8RGDtoxXJCvQRQ&utm_medium=api&utm_source=3a0e1b6c&v=35124F5D89EB0AB89151CD24916F2DD49241CB92)
+- **Apply:** [https://www.adzuna.co.uk/jobs/land/ad/5921798112?se=8NuxG83h8RGw0b4I0aGXyw&utm_medium=api&utm_source=3a0e1b6c&v=A7BA1D1353D2C5FCD6712218FDA9D9A3CD6D0C23](https://www.adzuna.co.uk/jobs/land/ad/5921798112?se=8NuxG83h8RGw0b4I0aGXyw&utm_medium=api&utm_source=3a0e1b6c&v=A7BA1D1353D2C5FCD6712218FDA9D9A3CD6D0C23)
 - **Tailored CV:** _not generated_
 
 
-**Why apply.** This role is a strong technical match, focusing on AI automation and Python development, which aligns with your core skills. Your experience building AI-powered applications and automation solutions directly fits the job requirements. The remote nature offers flexibility, even with occasional site visits.
+**Why apply.** Your 6+ years of experience building production AI automation with Python and Power Platform aligns well with this Senior AI Automation Engineer role. You have delivered enterprise-grade AI applications, processing 1,000+ records and achieving 95% value realization, which directly matches the job's focus on designing and delivering intelligent agents.
 
 **Strengths matched.**
-- Python for AI and automation development
-- Experience building AI-powered applications with Gemini API and Google AI Studio
-- Strong background in RPA and automation solutions (UiPath, Power Automate)
-- 6+ years of experience, exceeding the 3-5 years requested
+- Seniority matches job title and experience level
+- Python for AI automation, including LLM workflows
+- Power Automate and Power Platform experience
+- Experience delivering production AI applications (Gemini API, Google AI Studio)
+- Experience in large, governed enterprise environments (KPMG, Sterling Bank)
 
 
 **Gaps to address.**
-- No explicit experience in the pharmaceutical domain
-- The role is a contract position, which might not align with long-term career goals
+- Job description is brief, specific Copilot experience beyond Copilot Studio is not detailed
 
 
 **Red flags.**
-- No mention of visa sponsorship or relocation support for a candidate outside the UK
-- Adhoc visits to Welwyn Garden City, UK, present a logistical challenge for a candidate in Nigeria
+- Job is hybrid (3 days in office) in the UK, but no mention of visa sponsorship or relocation support
+- Candidate is based in Nigeria and requires sponsorship
 
 
 
 ---
 
-### 3. AI Automation Engineer, Harvey Nash
+### 3. Senior AI Engineer, Inato
 
-- **Location:** UK, Eastern England, Hertfordshire, Welwyn, Digswell (remote)
-- **Posted:** 5 days ago
-- **Source:** adzuna
+- **Location:** PARIS OFFICE or REMOTE FROM FRANCE (remote)
+- **Posted:** today
+- **Source:** arbeitnow
 - **Fit score:** 0.85
 - **Sponsorship signal:** no
-- **Apply:** [https://www.adzuna.co.uk/jobs/land/ad/5960369215?se=gJCbXvjg8RG-OM-EW4yB6g&utm_medium=api&utm_source=3a0e1b6c&v=35124F5D89EB0AB89151CD24916F2DD49241CB92](https://www.adzuna.co.uk/jobs/land/ad/5960369215?se=gJCbXvjg8RG-OM-EW4yB6g&utm_medium=api&utm_source=3a0e1b6c&v=35124F5D89EB0AB89151CD24916F2DD49241CB92)
+- **Apply:** [https://www.arbeitnow.fr/jobs/companies/inato/remote-senior-ai-engineer-344791](https://www.arbeitnow.fr/jobs/companies/inato/remote-senior-ai-engineer-344791)
 - **Tailored CV:** _not generated_
 
 
-**Why apply.** Praise's extensive experience with Python, Gemini API, and Azure AI Services directly aligns with developing AI-powered applications and automation solutions. Their 6+ years building RPA and AI automation for finance operations provides a strong background for this role.
-
-**Strengths matched.**
-- Python for AI automation development
-- Gemini API and Google AI Studio for LLM workflows
-- Azure AI Services for AI-driven solutions
-- UiPath and Power Automate for process automation
-- 6+ years building RPA and AI automation
-
-
-**Gaps to address.**
-- Job specifies 3-5 years experience, candidate has 6+ years
-- Job description does not explicitly mention UiPath or Power Automate
-
-
-**Red flags.**
-- Job is UK-based remote with ad-hoc visits, no mention of visa sponsorship or relocation support
-
-
-
----
-
-### 4. AI Automation Engineer, Stratospherec Ltd
-
-- **Location:** UK, London, Central London, Farringdon (remote)
-- **Posted:** 25 days ago
-- **Source:** adzuna
-- **Fit score:** 0.85
-- **Sponsorship signal:** unclear
-- **Apply:** [https://www.adzuna.co.uk/jobs/land/ad/5935449036?se=gJCbXvjg8RG-OM-EW4yB6g&utm_medium=api&utm_source=3a0e1b6c&v=2FBC51A8B51104E669136776DEB86B5BEA9DD868](https://www.adzuna.co.uk/jobs/land/ad/5935449036?se=gJCbXvjg8RG-OM-EW4yB6g&utm_medium=api&utm_source=3a0e1b6c&v=2FBC51A8B51104E669136776DEB86B5BEA9DD868)
-- **Tailored CV:** _not generated_
-
-
-**Why apply.** Praise's experience building production LLM workflows with Gemini API and Google AI Studio directly aligns with the job's existing AI systems. They have a strong background in RAG and developing automation, which matches the role's ownership and improvement goals. Their Python and Azure AI Services skills are also a direct fit.
+**Why apply.** Your experience building production LLM workflows with Gemini API and Google AI Studio, along with RAG techniques, directly matches the core AI Engineer responsibilities. You have a strong background in shipping AI features that process high volumes of data, which is critical for this role.
 
 **Strengths matched.**
 - Built production LLM workflows using Gemini API and Google AI Studio.
-- Experience with RAG, Chatbot Development, and Prompt Engineering.
-- Led end-to-end delivery of AI-assisted automation programs.
-- Python, Azure AI Services, and OpenAI API experience.
+- Experience with RAG techniques and chatbot development.
+- Shipped AI-assisted loan underwriting automation processing 1,000+ records.
+- Python, OpenAI API, and Azure AI Services experience.
 
 
 **Gaps to address.**
-- Job doesn't mention UiPath or Power Automate, core tools for the candidate.
-- Specific experience with SaaS platform development is not highlighted.
-- Domain focus has been finance/banking, not explicitly software engineering or technical support.
+- No explicit mention of Anthropic LLM experience.
+- No explicit mention of LLM observability tools.
+- Primary domain is finance/banking, not healthcare.
 
 
 **Red flags.**
-- No explicit mention of visa sponsorship or international remote work, despite 'Fully Remote working' and UK location.
-- The salary 'Up to £70,000' might be on the lower end for a senior AI Automation Engineer in London, especially if relocation/sponsorship is involved.
+- Job specifies 'REMOTE FROM FRANCE' or 'PARIS OFFICE', which does not align with needing sponsorship from Nigeria.
 
 
 
 ---
 
-### 5. AI Automation Engineer, Harvey Nash
+### 4. Intelligent Automation Engineer, Apex Systems
 
-- **Location:** UK, Eastern England, Hertfordshire, Welwyn Garden City (remote)
-- **Posted:** 5 days ago
-- **Source:** adzuna
-- **Fit score:** 0.85
-- **Sponsorship signal:** no
-- **Apply:** [https://www.adzuna.co.uk/jobs/land/ad/5959304495?se=gJCbXvjg8RG-OM-EW4yB6g&utm_medium=api&utm_source=3a0e1b6c&v=F77B46428F18DF65F61506A124E53ADE09691981](https://www.adzuna.co.uk/jobs/land/ad/5959304495?se=gJCbXvjg8RG-OM-EW4yB6g&utm_medium=api&utm_source=3a0e1b6c&v=F77B46428F18DF65F61506A124E53ADE09691981)
-- **Tailored CV:** _not generated_
-
-
-**Why apply.** Your 6+ years in AI and automation, including building production LLM workflows with Gemini API and Google AI Studio, align well with the AI Automation Engineer role. You have strong Python skills for developing AI-powered applications and intelligent agents, directly matching the job's core requirements.
-
-**Strengths matched.**
-- 6+ years building RPA and AI-driven process automation
-- Python for AI-powered applications and intelligent agents
-- Built production LLM workflows using Gemini API and Google AI Studio
-- Led end-to-end delivery of automation programs, achieving 95% value realization
-
-
-**Gaps to address.**
-- Job is a contract role, not explicitly in candidate's experience
-- Specific RPA tools (UiPath, Power Automate) not mentioned as requirements
-
-
-**Red flags.**
-- Contract roles rarely offer visa sponsorship
-- No mention of sponsorship or relocation for UK work authorization
-- Adhoc visits to UK location implies need for existing UK work rights
-
-
-
----
-
-### 6. AI Automation Engineer, Harvey Nash
-
-- **Location:** UK, Eastern England, Hertfordshire, Welwyn Garden City (remote)
-- **Posted:** 5 days ago
+- **Location:** US, Kentucky, Jefferson County, Louisville (remote)
+- **Posted:** 6 days ago
 - **Source:** adzuna
 - **Fit score:** 0.85
 - **Sponsorship signal:** unclear
-- **Apply:** [https://www.adzuna.co.uk/jobs/land/ad/5959304495?se=bJGOYPjg8RGjUublSsmu9w&utm_medium=api&utm_source=3a0e1b6c&v=F77B46428F18DF65F61506A124E53ADE09691981](https://www.adzuna.co.uk/jobs/land/ad/5959304495?se=bJGOYPjg8RGjUublSsmu9w&utm_medium=api&utm_source=3a0e1b6c&v=F77B46428F18DF65F61506A124E53ADE09691981)
+- **Apply:** [https://www.adzuna.com/land/ad/5960292401?se=1AGMPM3h8RG21d2WBdpE_g&utm_medium=api&utm_source=3a0e1b6c&v=77E1BE668F29C6FB8C05A28C257966A5E5997C59](https://www.adzuna.com/land/ad/5960292401?se=1AGMPM3h8RG21d2WBdpE_g&utm_medium=api&utm_source=3a0e1b6c&v=77E1BE668F29C6FB8C05A28C257966A5E5997C59)
 - **Tailored CV:** _not generated_
 
 
-**Why apply.** Praise's 6+ years of experience building AI-driven automation, including production LLM workflows with Gemini API and Google AI Studio, directly matches the AI Automation Engineer requirements. Their Python expertise and background in developing intelligent agents for complex processes align well with the role's focus on streamlining business operations. This is a strong technical fit.
+**Why apply.** Your 6+ years of experience in RPA and AI-driven automation, using tools like UiPath, Power Automate, and the Gemini API, directly aligns with the Intelligent Automation Engineer role. You have a strong background in building secure, scalable enterprise solutions, including KYC/AML and treasury integration. Your certifications further validate your expertise.
 
 **Strengths matched.**
-- Python for AI and automation development
-- Gemini API and Google AI Studio for LLM workflows
-- 6+ years building AI-driven automation solutions
-- Experience with AI-assisted loan underwriting
+- UiPath (Advanced Certified) and Power Automate (Certified) for automation
+- Gemini API, Google AI Studio, and Azure AI Services for AI/LLM workflows
+- 6+ years building enterprise RPA and AI solutions
+- Experience with full SDLC, testing, and production support
+- Built AI-assisted loan underwriting processing 1,000+ records
 
 
 **Gaps to address.**
-- No explicit mention of UiPath or Power Automate in job description
-- Lack of pharmaceutical industry experience
-- Contract role may not align with long-term sponsorship goals
+- Job description does not explicitly list UiPath or Power Automate as required tools
+- Specific experience with 'copilots' beyond general AI/LLM work is not detailed
 
 
 **Red flags.**
-- The role is a contract position, which often complicates visa sponsorship
-- No mention of visa sponsorship or relocation support
-- Adhoc visits to the UK may be difficult without established residency or specific travel arrangements
+- Job is US-based remote, but no mention of visa sponsorship or relocation support
 
 
 
 ---
 
-### 7. AI Automation Engineer, Harvey Nash
+### 5. AI Automation Engineer, Stratospherec Ltd
 
-- **Location:** UK, Eastern England, Hertfordshire, Welwyn, Digswell (remote)
-- **Posted:** 5 days ago
+- **Location:** UK, London, Central London, Farringdon (remote)
+- **Posted:** 27 days ago
 - **Source:** adzuna
-- **Fit score:** 0.85
+- **Fit score:** 0.80
 - **Sponsorship signal:** unclear
-- **Apply:** [https://www.adzuna.co.uk/jobs/land/ad/5960369215?se=-moCYvjg8RG3UKJUaLg__w&utm_medium=api&utm_source=3a0e1b6c&v=35124F5D89EB0AB89151CD24916F2DD49241CB92](https://www.adzuna.co.uk/jobs/land/ad/5960369215?se=-moCYvjg8RG3UKJUaLg__w&utm_medium=api&utm_source=3a0e1b6c&v=35124F5D89EB0AB89151CD24916F2DD49241CB92)
+- **Apply:** [https://www.adzuna.co.uk/jobs/land/ad/5935449036?se=gtPOGs3h8RGw0b4I0aGXyw&utm_medium=api&utm_source=3a0e1b6c&v=2FBC51A8B51104E669136776DEB86B5BEA9DD868](https://www.adzuna.co.uk/jobs/land/ad/5935449036?se=gtPOGs3h8RGw0b4I0aGXyw&utm_medium=api&utm_source=3a0e1b6c&v=2FBC51A8B51104E669136776DEB86B5BEA9DD868)
 - **Tailored CV:** _not generated_
 
 
-**Why apply.** This role aligns well with your Python, AI, and automation development skills, especially your experience with LLM workflows and enterprise automation. Your senior-level experience exceeds the stated requirement, positioning you as a strong candidate for leading these initiatives.
+**Why apply.** Praise's experience building production LLM workflows using Gemini API and Google AI Studio, along with RAG implementation, directly matches the job's AI automation focus. Their background in end-to-end delivery of complex automation projects, including SDLC ownership, prepares them to take ownership of existing systems and develop new ones. This role offers a clear path to apply their deep automation and AI skills.
 
 **Strengths matched.**
-- Python for AI and automation development
-- Experience building production LLM workflows (Gemini API, Google AI Studio, Azure AI Services)
-- 6+ years delivering end-to-end automation solutions
-- Expertise in RPA platforms (UiPath, Power Automate)
+- LLM workflow development (Gemini API, Google AI Studio, OpenAI API, Azure AI Services)
+- RAG system implementation
+- End-to-end automation delivery for complex business processes
+- UiPath and Power Automate expertise
 
 
 **Gaps to address.**
-- Job description does not explicitly mention UiPath or Power Automate
-- "Contract" role might not offer long-term stability or sponsorship
+- Direct experience automating software engineering or technical support specific pipelines
+- No explicit mention of SaaS software platform domain experience
 
 
 **Red flags.**
-- No mention of visa sponsorship or relocation support
-- "Adhoc visits" to Welwyn Garden City for a remote role could be difficult from Nigeria
+- Job is UK-based remote, but no mention of visa sponsorship or global hiring for a candidate needing sponsorship from Nigeria
+
+
+
+---
+
+### 6. Lead AI Engineer, MCS Group
+
+- **Location:** UK, Northern Ireland, Belfast
+- **Posted:** 9 days ago
+- **Source:** adzuna
+- **Fit score:** 0.80
+- **Sponsorship signal:** unclear
+- **Apply:** [https://www.adzuna.co.uk/jobs/land/ad/5956030567?se=8kM8Hc3h8RGw0b4I0aGXyw&utm_medium=api&utm_source=3a0e1b6c&v=5F0DA9797340EAC4355A8AFEFB0A3628AC888C1A](https://www.adzuna.co.uk/jobs/land/ad/5956030567?se=8kM8Hc3h8RGw0b4I0aGXyw&utm_medium=api&utm_source=3a0e1b6c&v=5F0DA9797340EAC4355A8AFEFB0A3628AC888C1A)
+- **Tailored CV:** _not generated_
+
+
+**Why apply.** Your experience building production LLM workflows using Gemini API and Google AI Studio for KYC/AML and loan underwriting directly aligns with the job's focus on experimenting with LLMs and building agents. Your senior-level experience leading AI-assisted solutions also fits the need for someone to influence AI strategy across the business.
+
+**Strengths matched.**
+- Seniority matches 'Senior-Level Position'
+- Experience building production LLM workflows using Gemini API and Google AI Studio directly aligns with the job's focus on LLMs and agents
+- Python experience is a core AI skill
+- Experience leading end-to-end AI-assisted solutions (loan underwriting automation) aligns with influencing AI strategy across a business
+
+
+**Gaps to address.**
+- Job title 'Lead AI Engineer' is slightly different from 'Automation Developer', though the work overlaps
+- Job description does not mention UiPath or Power Automate, which are core to your profile
+
+
+**Red flags.**
+- Job is on-site in Belfast, UK, with no mention of visa sponsorship or relocation support
+
+
+
+---
+
+### 7. Agentic AI Engineering, Data & Technology, EMBS Engineering
+
+- **Location:** UK (remote)
+- **Posted:** 6 days ago
+- **Source:** adzuna
+- **Fit score:** 0.75
+- **Sponsorship signal:** unclear
+- **Apply:** [https://www.adzuna.co.uk/jobs/land/ad/5959579078?se=auxAG83h8RGDL_33h7qJHQ&utm_medium=api&utm_source=3a0e1b6c&v=61C6CD299256FEB7A91CA465EBCBD4699ADC6DD5](https://www.adzuna.co.uk/jobs/land/ad/5959579078?se=auxAG83h8RGDL_33h7qJHQ&utm_medium=api&utm_source=3a0e1b6c&v=61C6CD299256FEB7A91CA465EBCBD4699ADC6DD5)
+- **Tailored CV:** _not generated_
+
+
+**Why apply.** Your 6+ years in AI-driven automation, particularly with Gemini API and Google AI Studio for complex financial processes, aligns well with 'Agentic AI Engineering'. Your Python skills and senior leadership experience are strong assets for this role.
+
+**Strengths matched.**
+- 6+ years building AI-driven process automation
+- Production LLM workflows using Gemini API and Google AI Studio
+- Python, Microsoft Graph API, and Azure AI Services experience
+- Led end-to-end delivery of 4-country treasury integration, achieving 95% value realization
+- Seniority matches the job's 'Senior' level
+
+
+**Gaps to address.**
+- Job emphasizes 'Full-Stack Engineering' and 'Product Engineering', which are not primary focuses in your profile
+- Specific experience with 'AI Coding Agents' is not explicitly detailed, though LLM workflow experience is strong
+- CI/CD experience is not highlighted as a core competency
+
+
+**Red flags.**
+- Job description does not mention visa sponsorship or relocation support
+- The 'UK Remote' role requires 1 day per month onsite in the North West, which is a significant logistical hurdle for someone needing to relocate from Nigeria
 
 
 
@@ -272,25 +271,25 @@ Thresholds: heuristic >= 0.4, apply-ready >= 0.7.
 
 
 
-- **IT Online Learning**, AI Engineer Placement Programme – No Experience Needed (0.66): no deep score [link](https://www.adzuna.co.uk/jobs/land/ad/5952912906?se=-moCYvjg8RG3UKJUaLg__w&utm_medium=api&utm_source=3a0e1b6c&v=667808C4E36F70E72BF45BBA7A6D8AF94C6B9EAA)
+- **IT Online Learning**, AI Engineer Placement Programme – No Experience Needed (0.66): no deep score [link](https://www.adzuna.co.uk/jobs/land/ad/5952900366?se=8kM8Hc3h8RGw0b4I0aGXyw&utm_medium=api&utm_source=3a0e1b6c&v=2478645A51829C8E51C8C6138166E1779B55C338)
 
-- **IT Online Learning**, AI Engineer Placement Programme – No Experience Needed (0.66): no deep score [link](https://www.adzuna.co.uk/jobs/land/ad/5952912872?se=-moCYvjg8RG3UKJUaLg__w&utm_medium=api&utm_source=3a0e1b6c&v=FD173E981E2EC84DA9F7A02C04722FE7D56A3D17)
+- **Sophos**, AI and Automation Engineer (0.66): no deep score [link](https://www.adzuna.ca/details/5961468601?utm_medium=api&utm_source=3a0e1b6c)
 
-- **Skillhub Solutions Inc.**, AI and Automation Engineer (0.66): no deep score [link](https://www.adzuna.ca/details/5966145007?utm_medium=api&utm_source=3a0e1b6c)
+- **ApTask**, QA Automation Engineer with AI (0.66): no deep score [link](https://www.adzuna.ca/details/5948025885?utm_medium=api&utm_source=3a0e1b6c)
 
-- **Fluor**, Control and Automation Engineer (0.66): no deep score [link](https://www.adzuna.ca/details/5966715030?utm_medium=api&utm_source=3a0e1b6c)
+- **ObjectWin Technology**, Automation Engineer 4 (ML/AI Systems Design Engineer) (0.66): no deep score [link](https://www.adzuna.ca/details/5947987971?utm_medium=api&utm_source=3a0e1b6c)
 
-- **Apex Systems**, Intelligent Automation Architect (0.66): no deep score [link](https://www.adzuna.com/land/ad/5960293230?se=2BjUgfjg8RG3UKJUaLg__w&utm_medium=api&utm_source=3a0e1b6c&v=091B4BF1865DD06C8260560321C2862A2168FDCB)
+- **Fluor**, Control and Automation Engineer (0.66): no deep score [link](https://www.adzuna.ca/details/5966715012?utm_medium=api&utm_source=3a0e1b6c)
 
-- **Pristinno Technology LLC**, SAP Consultant AI & Intelligent Automation (0.66): no deep score [link](https://www.adzuna.com/land/ad/5934444711?se=2BjUgfjg8RG3UKJUaLg__w&utm_medium=api&utm_source=3a0e1b6c&v=F85FBB031E5DEA9DD1EB8C1BA7296E5F7B6C0280)
+- **Fluor**, Control and Automation Engineer (0.66): no deep score [link](https://www.adzuna.ca/details/5966714541?utm_medium=api&utm_source=3a0e1b6c)
 
-- **University of Washington**, ERC Intelligent Automation Business Analyst (0.66): no deep score [link](https://www.adzuna.com/land/ad/5890569772?se=2BjUgfjg8RG3UKJUaLg__w&utm_medium=api&utm_source=3a0e1b6c&v=5242C6DE3C2ED79CE938FC737BB07ED9A32F9FEB)
+- **Saint-Gobain**, Automation Engineer / Specialist (0.66): no deep score [link](https://www.adzuna.ca/details/5961957924?utm_medium=api&utm_source=3a0e1b6c)
 
-- **K-Tek Resourcing LLC**, Solution Architect (WorkFusion Delivery Role, Java engineering, Intelligent Automation (RPA/ML) architecture , Agile) (0.66): no deep score [link](https://www.adzuna.com/land/ad/5952008106?se=YCpigvjg8RGNl561rfNY_A&utm_medium=api&utm_source=3a0e1b6c&v=77E102CDABAAF29FBD00ED915603FC4F7FE6C3FB)
+- **Virtusa Corporation**, AI Engineer (0.66): no deep score [link](https://www.adzuna.ca/details/5967041244?utm_medium=api&utm_source=3a0e1b6c)
 
-- **Dorsett Controls**, SCADA Automation Engineer (0.66): no deep score [link](https://www.adzuna.com/land/ad/5949534585?se=mDPPg_jg8RGztpiTYVg_9g&utm_medium=api&utm_source=3a0e1b6c&v=01A995576578D76E341257C1BD944035291F7685)
+- **Apex Systems**, Intelligent Automation Architect (0.66): no deep score [link](https://www.adzuna.com/land/ad/5960293230?se=1AGMPM3h8RG21d2WBdpE_g&utm_medium=api&utm_source=3a0e1b6c&v=091B4BF1865DD06C8260560321C2862A2168FDCB)
 
-- **Kforce Technology Staffing**, Automation Engineer (0.66): no deep score [link](https://www.adzuna.com/land/ad/5960758994?se=mDPPg_jg8RGztpiTYVg_9g&utm_medium=api&utm_source=3a0e1b6c&v=77242827F656F83DE059A65E569C150109106B37)
+- **Pristinno Technology LLC**, SAP Consultant AI & Intelligent Automation (0.66): no deep score [link](https://www.adzuna.com/land/ad/5934444711?se=1AGMPM3h8RG21d2WBdpE_g&utm_medium=api&utm_source=3a0e1b6c&v=F85FBB031E5DEA9DD1EB8C1BA7296E5F7B6C0280)
 
 
 
@@ -298,18 +297,18 @@ Thresholds: heuristic >= 0.4, apply-ready >= 0.7.
 
 | Source | Status | Count | Duration | Error |
 |--------|--------|-------|----------|-------|
-| greenhouse | FAIL | 0 | 4.55s | GET https://boards-api.greenhouse.io/v1/boards/deel/jobs failed after 3 attempts: Client error '404 Not Found' for url 'https://boards-api.greenhouse.io/v1/boards/deel/jobs?content=true'
+| greenhouse | FAIL | 0 | 4.59s | GET https://boards-api.greenhouse.io/v1/boards/deel/jobs failed after 3 attempts: Client error '404 Not Found' for url 'https://boards-api.greenhouse.io/v1/boards/deel/jobs?content=true'
 For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 |
-| lever | FAIL | 0 | 8.27s | GET https://api.lever.co/v0/postings/figma failed after 3 attempts: Client error '404 Not Found' for url 'https://api.lever.co/v0/postings/figma?mode=json'
+| lever | FAIL | 0 | 4.15s | GET https://api.lever.co/v0/postings/figma failed after 3 attempts: Client error '404 Not Found' for url 'https://api.lever.co/v0/postings/figma?mode=json'
 For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 |
-| ashby | FAIL | 0 | 4.18s | GET https://api.ashbyhq.com/posting-api/job-board/arc failed after 3 attempts: Client error '404 Not Found' for url 'https://api.ashbyhq.com/posting-api/job-board/arc?includeCompensation=true'
+| ashby | FAIL | 0 | 4.63s | GET https://api.ashbyhq.com/posting-api/job-board/arc failed after 3 attempts: Client error '404 Not Found' for url 'https://api.ashbyhq.com/posting-api/job-board/arc?includeCompensation=true'
 For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 |
-| workable | ok | 0 | 0.1s |  |
-| personio | ok | 0 | 0.66s |  |
-| remotive | ok | 16 | 0.34s |  |
-| arbeitnow | ok | 300 | 0.26s |  |
-| adzuna | ok | 1519 | 64.43s |  |
-| hn_whoishiring | ok | 51 | 1.94s |  |
+| workable | ok | 0 | 0.22s |  |
+| personio | ok | 0 | 0.67s |  |
+| remotive | ok | 17 | 0.64s |  |
+| arbeitnow | ok | 300 | 0.35s |  |
+| adzuna | ok | 1520 | 60.57s |  |
+| hn_whoishiring | ok | 51 | 2.49s |  |
 
 
 _This brief was produced by the JobHunt pipeline. It does not submit applications. Verify UK sponsorship claims on the GOV.UK Licensed Sponsor Register before applying._
