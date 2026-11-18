@@ -1,6 +1,6 @@
-# JobHunt brief, 2026-11-17
+# JobHunt brief, 2026-11-18
 
-> **PARTIAL RUN.** time_budget_exceeded after 25/40 LLM scores (elapsed 1293s > budget 1200s).
+> **PARTIAL RUN.** time_budget_exceeded after 25/40 LLM scores (elapsed 1223s > budget 1200s).
 > The pipeline did not fully complete, so the picks below are based on
 > whatever scoring finished. Heuristic-only jobs are marked.
 
@@ -8,11 +8,11 @@
 ## Run summary
 
 - Sources run: **9**
-- Jobs fetched: **1891** (914 fresh, 977 previously seen)
-- Passed heuristic prefilter: **514** of 914
-- Deep-scored with Gemini: **20**
-- Selected for tailoring: **7**
-- Wall time: **1292.6s**
+- Jobs fetched: **1887** (889 fresh, 998 previously seen)
+- Passed heuristic prefilter: **467** of 889
+- Deep-scored with Gemini: **21**
+- Selected for tailoring: **5**
+- Wall time: **1223.1s**
 
 Thresholds: heuristic >= 0.4, apply-ready >= 0.7.
 
@@ -21,250 +21,183 @@ Thresholds: heuristic >= 0.4, apply-ready >= 0.7.
 
 | # | Company | Role | Location | Remote | Fit | Sponsorship | Apply |
 |---|---------|------|----------|--------|-----|-------------|-------|
-| 1 | Actcareers | Applied AI Engineer | Germany | ? | 0.85 | unclear | [link](https://www.arbeitnow.com/jobs/companies/actcareers/applied-ai-engineer-germany-308894) |
-| 2 | Stratospherec Ltd | AI Automation Engineer | UK, London, Central London, Farringdon | yes | 0.85 | unclear | [link](https://www.adzuna.co.uk/jobs/land/ad/5935449036?se=VPTI6pvi8RG6_8X6c14vlA&utm_medium=api&utm_source=3a0e1b6c&v=2FBC51A8B51104E669136776DEB86B5BEA9DD868) |
-| 3 | GEI Consultants | AI Engineer | Canada, Ontario, York region, Markham | ? | 0.85 | unclear | [link](https://www.adzuna.ca/details/5945692826?utm_medium=api&utm_source=3a0e1b6c) |
-| 4 | Protocase Inc./45Drives Ltd. | AI Engineer (Agentic Workflows) | Canada, Ontario, Waterloo region, Kitchener | no | 0.75 | unclear | [link](https://www.adzuna.ca/details/5941437299?utm_medium=api&utm_source=3a0e1b6c) |
-| 5 | Protocase Inc./45Drives Ltd. | AI Engineer (Agentic Workflows) | Canada, Nova Scotia, Cape Breton, Sydney | no | 0.75 | unclear | [link](https://www.adzuna.ca/details/5934212743?utm_medium=api&utm_source=3a0e1b6c) |
-| 6 | Envision Financial | AI Engineer | Canada, British Columbia, Cowichan Valley, Duncan | ? | 0.75 | unclear | [link](https://www.adzuna.ca/details/5968010873?utm_medium=api&utm_source=3a0e1b6c) |
-| 7 | SANS | Data & AI / LLM Engineer | US | yes | 0.75 | unclear | [link](https://www.adzuna.com/land/ad/5963556870?se=XuC4E5zi8RGvetEb-95Ieg&utm_medium=api&utm_source=3a0e1b6c&v=4392AB049F8BD80ABAE2053F7E63B4859CC08C88) |
+| 1 | VANRATH | AI Engineer | UK, Northern Ireland, Belfast | ? | 0.85 | unclear | [link](https://www.adzuna.co.uk/jobs/land/ad/5952083573?se=PBnk7GHj8RGTKt2iX61Xpg&utm_medium=api&utm_source=3a0e1b6c&v=12DFC9785F7E94594FBAE241372A8A949543FC12) |
+| 2 | Kforce Technology Staffing | Automation Engineer | US, Georgia, DeKalb County, Northlake | yes | 0.85 | unclear | [link](https://www.adzuna.com/land/ad/5960758994?se=ULxIDWLj8RGUNdeZSj6DiQ&utm_medium=api&utm_source=3a0e1b6c&v=77242827F656F83DE059A65E569C150109106B37) |
+| 3 | Momento USA LLC | QA Test Architect – AI & Intelligent Automation | US | yes | 0.75 | unclear | [link](https://www.adzuna.com/land/ad/5968299393?se=CGWUC2Lj8RGGP5miRnSgrw&utm_medium=api&utm_source=3a0e1b6c&v=2F8958A4FAB793E38212D229C881A514DDBEDCD2) |
+| 4 | University of Washington | ERC Intelligent Automation Business Analyst | US, Washington, King County, International | yes | 0.70 | no | [link](https://www.adzuna.com/land/ad/5890569772?se=CGWUC2Lj8RGGP5miRnSgrw&utm_medium=api&utm_source=3a0e1b6c&v=5242C6DE3C2ED79CE938FC737BB07ED9A32F9FEB) |
+| 5 | Brooksource | AI Engineer | US | yes | 0.70 | no | [link](https://www.adzuna.com/land/ad/5959522937?se=zvHGDWLj8RGTKt2iX61Xpg&utm_medium=api&utm_source=3a0e1b6c&v=45F38B9A2A912C60DCE5C9AA0D5FEF1400193AA4) |
 
 
 
 ## Per-job detail
 
 
-### 1. Applied AI Engineer, Actcareers
+### 1. AI Engineer, VANRATH
 
-- **Location:** Germany
-- **Posted:** today
-- **Source:** arbeitnow
-- **Fit score:** 0.85
-- **Sponsorship signal:** unclear
-- **Apply:** [https://www.arbeitnow.com/jobs/companies/actcareers/applied-ai-engineer-germany-308894](https://www.arbeitnow.com/jobs/companies/actcareers/applied-ai-engineer-germany-308894)
-- **Tailored CV:** _not generated_
-
-
-**Why apply.** Your 6+ years of experience building production AI systems, integrating LLM APIs, and designing agent workflows align well with this role. You can apply your skills in Python, Azure AI, and prompt engineering to develop proactive applications.
-
-**Strengths matched.**
-- Python programming, building production backend systems
-- LLM API experience (Gemini API, OpenAI API)
-- Designing and deploying agent workflows
-- Experience evaluating AI outputs and debugging failures
-- RAG systems knowledge
-
-
-**Gaps to address.**
-- Direct experience with open-source LLMs (Llama, Qwen) or vLLM
-- Model fine-tuning using PyTorch or JAX
-- Building AI-powered consumer messaging or productivity applications
-
-
-**Red flags.**
-- Job is located in Germany, not remote, and does not mention visa sponsorship or relocation support
-
-
-
----
-
-### 2. AI Automation Engineer, Stratospherec Ltd
-
-- **Location:** UK, London, Central London, Farringdon (remote)
-- **Posted:** 28 days ago
+- **Location:** UK, Northern Ireland, Belfast
+- **Posted:** 14 days ago
 - **Source:** adzuna
 - **Fit score:** 0.85
 - **Sponsorship signal:** unclear
-- **Apply:** [https://www.adzuna.co.uk/jobs/land/ad/5935449036?se=VPTI6pvi8RG6_8X6c14vlA&utm_medium=api&utm_source=3a0e1b6c&v=2FBC51A8B51104E669136776DEB86B5BEA9DD868](https://www.adzuna.co.uk/jobs/land/ad/5935449036?se=VPTI6pvi8RG6_8X6c14vlA&utm_medium=api&utm_source=3a0e1b6c&v=2FBC51A8B51104E669136776DEB86B5BEA9DD868)
+- **Apply:** [https://www.adzuna.co.uk/jobs/land/ad/5952083573?se=PBnk7GHj8RGTKt2iX61Xpg&utm_medium=api&utm_source=3a0e1b6c&v=12DFC9785F7E94594FBAE241372A8A949543FC12](https://www.adzuna.co.uk/jobs/land/ad/5952083573?se=PBnk7GHj8RGTKt2iX61Xpg&utm_medium=api&utm_source=3a0e1b6c&v=12DFC9785F7E94594FBAE241372A8A949543FC12)
 - **Tailored CV:** _not generated_
 
 
-**Why apply.** This role is a strong match for your AI automation and LLM workflow experience, including RAG systems. Your senior background in leading complex projects and improving reliability aligns well with the ownership responsibilities. The fully remote setup also fits your target.
+**Why apply.** Your 6+ years building AI-driven automation, including LLM workflows with Gemini API and Azure AI Services, directly aligns with this AI Engineer role. You have a strong background delivering intelligent applications for finance operations, which is valuable for solving real business challenges.
 
 **Strengths matched.**
-- Experience building production LLM workflows using Gemini API and Google AI Studio
-- Direct experience with RAG-based systems
-- Led end-to-end delivery of complex automation programs, achieving 95% value realization
-- Seniority aligns with taking ownership and improving reliability
-- Python skills for AI and automation
+- 6+ years building AI-driven automation
+- Experience with Gemini API, Google AI Studio, and Azure AI Services for LLM workflows
+- Delivered AI-assisted loan underwriting and KYC/AML automation
+- Strong background in finance operations automation
 
 
 **Gaps to address.**
-- Job description does not explicitly mention UiPath or Power Automate
-- Finance/banking domain experience is not a stated requirement
-- No mention of SWIFT or Bloomberg FXGO
+- Job description does not explicitly list UiPath or Power Automate
+- No specific mention of Python, SQL, or other core development tools
+- Job description is generic, not detailing specific AI frameworks or libraries
 
 
 **Red flags.**
-- No explicit mention of visa sponsorship or global hiring for a UK-based remote role
+- Job is hybrid in Belfast, UK, with no mention of visa sponsorship or relocation support
 
 
 
 ---
 
-### 3. AI Engineer, GEI Consultants
+### 2. Automation Engineer, Kforce Technology Staffing
 
-- **Location:** Canada, Ontario, York region, Markham
-- **Posted:** 19 days ago
+- **Location:** US, Georgia, DeKalb County, Northlake (remote)
+- **Posted:** 7 days ago
 - **Source:** adzuna
 - **Fit score:** 0.85
 - **Sponsorship signal:** unclear
-- **Apply:** [https://www.adzuna.ca/details/5945692826?utm_medium=api&utm_source=3a0e1b6c](https://www.adzuna.ca/details/5945692826?utm_medium=api&utm_source=3a0e1b6c)
+- **Apply:** [https://www.adzuna.com/land/ad/5960758994?se=ULxIDWLj8RGUNdeZSj6DiQ&utm_medium=api&utm_source=3a0e1b6c&v=77242827F656F83DE059A65E569C150109106B37](https://www.adzuna.com/land/ad/5960758994?se=ULxIDWLj8RGUNdeZSj6DiQ&utm_medium=api&utm_source=3a0e1b6c&v=77242827F656F83DE059A65E569C150109106B37)
 - **Tailored CV:** _not generated_
 
 
-**Why apply.** Praise's experience building production LLM workflows with Gemini API and Google AI Studio directly matches the AI Engineer role's focus on developing AI solutions. Their 6+ years in AI-driven process automation, including prompt engineering and RAG, aligns well with integrating AI capabilities into business workflows.
+**Why apply.** This role aligns well with your Python, AI, and API integration skills, especially your work with the Gemini API and Google AI Studio. The remote nature of the position also fits your target.
 
 **Strengths matched.**
-- Built production LLM workflows using Gemini API and Google AI Studio
-- Developed AI-assisted loan underwriting automation
-- Experience with Python NLP and Azure AI Services
-- 6+ years building AI-driven process automation
-- Expertise in Prompt Engineering, RAG, and Chatbot Development
+- Python for automation
+- AI-driven automation (Gemini API, Google AI Studio)
+- API integration (Microsoft Graph API, Bloomberg FXGO)
+- 6+ years of senior-level automation experience
 
 
 **Gaps to address.**
-- Job mentions 'copilots' specifically; candidate has 'Copilot Studio' listed but not detailed in experience
-- Job description is very brief, making it hard to assess specific technical depth beyond general AI/LLM
+- Specific Google Cloud Platform (GCP) infrastructure experience
+- Job description does not mention UiPath or Power Automate
 
 
 **Red flags.**
-- No mention of visa sponsorship or relocation support, which is critical for the candidate
-- Job is on-site in Canada, requiring international relocation and sponsorship
-- Generic job description provides limited insight into the team or specific projects
+- No mention of visa sponsorship or global hiring for a US-based remote role
 
 
 
 ---
 
-### 4. AI Engineer (Agentic Workflows), Protocase Inc./45Drives Ltd.
+### 3. QA Test Architect – AI & Intelligent Automation, Momento USA LLC
 
-- **Location:** Canada, Ontario, Waterloo region, Kitchener
-- **Posted:** 23 days ago
-- **Source:** adzuna
-- **Fit score:** 0.75
-- **Sponsorship signal:** unclear
-- **Apply:** [https://www.adzuna.ca/details/5941437299?utm_medium=api&utm_source=3a0e1b6c](https://www.adzuna.ca/details/5941437299?utm_medium=api&utm_source=3a0e1b6c)
-- **Tailored CV:** _not generated_
-
-
-**Why apply.** Your experience building production LLM workflows with the Gemini API directly matches the 'AI Engineer (Agentic Workflows)' title. Your background in AI-assisted automation for finance operations is a strong asset for this type of role.
-
-**Strengths matched.**
-- Built production LLM workflows using Gemini API and Google AI Studio
-- Experience with AI-assisted loan underwriting and KYC/AML automation
-- Seniority (6+ years) aligns with Mid-Senior role
-
-
-**Gaps to address.**
-- Job description does not specify AI tools or platforms beyond 'Agentic Workflows'
-- Candidate's extensive RPA experience may not be the primary focus
-- No direct mention of finance/banking domain in the job description
-
-
-**Red flags.**
-- Job is in-office in Waterloo, Ontario, Canada, with no mention of visa sponsorship or relocation support
-
-
-
----
-
-### 5. AI Engineer (Agentic Workflows), Protocase Inc./45Drives Ltd.
-
-- **Location:** Canada, Nova Scotia, Cape Breton, Sydney
-- **Posted:** 29 days ago
-- **Source:** adzuna
-- **Fit score:** 0.75
-- **Sponsorship signal:** unclear
-- **Apply:** [https://www.adzuna.ca/details/5934212743?utm_medium=api&utm_source=3a0e1b6c](https://www.adzuna.ca/details/5934212743?utm_medium=api&utm_source=3a0e1b6c)
-- **Tailored CV:** _not generated_
-
-
-**Why apply.** Your experience building production LLM workflows with Gemini API and Google AI Studio directly aligns with the 'AI Engineer (Agentic Workflows)' title. You have a strong background in AI-driven automation, which is a core requirement for this type of role. Your senior-level experience also matches the expected seniority.
-
-**Strengths matched.**
-- LLM workflow development using Gemini API and Google AI Studio
-- AI-assisted loan underwriting automation, processing 1,000+ records
-- Python for automation and data processing
-- Azure AI Services experience
-- Seniority matches 'Mid-Senior' level
-
-
-**Gaps to address.**
-- Job description does not specify desired RPA tools like UiPath or Power Automate
-
-
-**Red flags.**
-- Job is in-office in Canada, requiring relocation
-- No mention of visa sponsorship or relocation support
-- Job description is extremely brief, lacking detail on responsibilities and tech stack
-
-
-
----
-
-### 6. AI Engineer, Envision Financial
-
-- **Location:** Canada, British Columbia, Cowichan Valley, Duncan
+- **Location:** US (remote)
 - **Posted:** 1 day ago
 - **Source:** adzuna
 - **Fit score:** 0.75
 - **Sponsorship signal:** unclear
-- **Apply:** [https://www.adzuna.ca/details/5968010873?utm_medium=api&utm_source=3a0e1b6c](https://www.adzuna.ca/details/5968010873?utm_medium=api&utm_source=3a0e1b6c)
+- **Apply:** [https://www.adzuna.com/land/ad/5968299393?se=CGWUC2Lj8RGGP5miRnSgrw&utm_medium=api&utm_source=3a0e1b6c&v=2F8958A4FAB793E38212D229C881A514DDBEDCD2](https://www.adzuna.com/land/ad/5968299393?se=CGWUC2Lj8RGGP5miRnSgrw&utm_medium=api&utm_source=3a0e1b6c&v=2F8958A4FAB793E38212D229C881A514DDBEDCD2)
 - **Tailored CV:** _not generated_
 
 
-**Why apply.** Your experience building production LLM workflows using Gemini API and Google AI Studio, along with Azure AI Services, directly matches the AI Engineer role. Your background in finance automation, including KYC/AML and loan underwriting, is also highly relevant for Envision Financial. This position offers a strong opportunity to apply your advanced AI skills in a financial context.
+**Why apply.** Your extensive experience in RPA and AI automation, including UiPath, Power Automate, and Gemini API, aligns well with the AI & Intelligent Automation focus. Your background leading end-to-end delivery and supporting UAT demonstrates relevant skills for an architect role.
 
 **Strengths matched.**
-- LLM workflow development (Gemini API, Google AI Studio)
-- AI-assisted loan underwriting automation
-- KYC/AML automation experience
-- Azure AI Services experience
-- Python for AI and automation
+- 6+ years building RPA and AI-driven automation
+- UiPath (Advanced Certified) and Power Automate (Certified) expertise
+- Experience with Gemini API, Google AI Studio, and Azure AI Services for AI/LLM workflows
+- Led end-to-end delivery of complex automation programs, including 4-country treasury integration
+- Experience with UAT, testing, and SDLC
 
 
 **Gaps to address.**
-- Specific experience with 'agentic AI applications' is not explicitly detailed in profile
+- Role title emphasizes 'QA Test Architect', which may require deeper, specialized QA architecture experience beyond automation development
+- No explicit mention of specific QA automation frameworks (e.g., Selenium, Playwright) or dedicated test automation tools beyond RPA
 
 
 **Red flags.**
-- Job description is extremely brief, lacking detail on responsibilities and required skills
-- No mention of visa sponsorship or relocation support for a non-local candidate
-- Role is on-site in Canada, requiring relocation and sponsorship not indicated by employer
+- Job description does not mention visa sponsorship or global hiring, which is critical for the candidate
+- Remote US often implies US residency, potentially complicating relocation/sponsorship
 
 
 
 ---
 
-### 7. Data & AI / LLM Engineer, SANS
+### 4. ERC Intelligent Automation Business Analyst, University of Washington
 
-- **Location:** US (remote)
-- **Posted:** 5 days ago
+- **Location:** US, Washington, King County, International (remote)
+- **Posted:** 2 month(s) ago
 - **Source:** adzuna
-- **Fit score:** 0.75
-- **Sponsorship signal:** unclear
-- **Apply:** [https://www.adzuna.com/land/ad/5963556870?se=XuC4E5zi8RGvetEb-95Ieg&utm_medium=api&utm_source=3a0e1b6c&v=4392AB049F8BD80ABAE2053F7E63B4859CC08C88](https://www.adzuna.com/land/ad/5963556870?se=XuC4E5zi8RGvetEb-95Ieg&utm_medium=api&utm_source=3a0e1b6c&v=4392AB049F8BD80ABAE2053F7E63B4859CC08C88)
+- **Fit score:** 0.70
+- **Sponsorship signal:** no
+- **Apply:** [https://www.adzuna.com/land/ad/5890569772?se=CGWUC2Lj8RGGP5miRnSgrw&utm_medium=api&utm_source=3a0e1b6c&v=5242C6DE3C2ED79CE938FC737BB07ED9A32F9FEB](https://www.adzuna.com/land/ad/5890569772?se=CGWUC2Lj8RGGP5miRnSgrw&utm_medium=api&utm_source=3a0e1b6c&v=5242C6DE3C2ED79CE938FC737BB07ED9A32F9FEB)
 - **Tailored CV:** _not generated_
 
 
-**Why apply.** Praise's experience building production LLM workflows with Gemini API and Google AI Studio, plus data pipeline skills, directly aligns with this Data & AI / LLM Engineer role. The senior title also matches their seniority.
+**Why apply.** The candidate's extensive experience in RPA and AI-driven automation, including leading multi-country programs, aligns well with an 'Intelligent Automation Program' role. Their background in finance operations, KYC/AML, and loan underwriting provides a strong foundation for this position.
 
 **Strengths matched.**
-- Built production LLM workflows using Gemini API and Google AI Studio
-- Experience with Azure AI Services, OpenAI API, RAG, and prompt engineering
-- Seniority matches the 'Senior Data & AI / LLM Engineer' title
-- Developed scalable data pipelines using Python, SQL, and Azure
+- 6+ years in RPA and AI-driven automation
+- UiPath (Advanced Certified) and Power Automate expertise
+- Experience with Python, Gemini API, and Azure AI Services
+- Led multi-country finance automation programs, achieving 95% value realization
+- Strong background in KYC/AML and loan underwriting automation
 
 
 **Gaps to address.**
-- No explicit experience in the insurance domain
-- Job description does not mention UiPath or Power Automate, core to candidate's RPA background
+- Job title 'Business Analyst' might imply less hands-on development than candidate's current roles
+- Specific tools like Bloomberg FXGO or SWIFT are not mentioned in the job description
+- 'Revenue Cycle' domain is new, though related to finance operations
 
 
 **Red flags.**
-- Job is a 12-month contract, which typically does not offer visa sponsorship
-- No mention of visa sponsorship or global hiring for a US-based remote role
+- Job description is extremely brief, lacking details on responsibilities, required skills, or team
+- '100% Remote - must be on site as business need require' for a Seattle, WA role makes it unsuitable for an international candidate needing sponsorship and relocation
+- No mention of visa sponsorship or relocation assistance
+
+
+
+---
+
+### 5. AI Engineer, Brooksource
+
+- **Location:** US (remote)
+- **Posted:** 8 days ago
+- **Source:** adzuna
+- **Fit score:** 0.70
+- **Sponsorship signal:** no
+- **Apply:** [https://www.adzuna.com/land/ad/5959522937?se=zvHGDWLj8RGTKt2iX61Xpg&utm_medium=api&utm_source=3a0e1b6c&v=45F38B9A2A912C60DCE5C9AA0D5FEF1400193AA4](https://www.adzuna.com/land/ad/5959522937?se=zvHGDWLj8RGTKt2iX61Xpg&utm_medium=api&utm_source=3a0e1b6c&v=45F38B9A2A912C60DCE5C9AA0D5FEF1400193AA4)
+- **Tailored CV:** _not generated_
+
+
+**Why apply.** Your experience building production LLM workflows using Gemini API and Google AI Studio directly aligns with the job's focus on AI agents. Your senior-level project leadership and Python skills are a good fit for this role.
+
+**Strengths matched.**
+- Built production LLM workflows using Gemini API and Google AI Studio
+- Experience with Azure AI Services and OpenAI API
+- Seniority matches the role's requirements
+- Python skills are relevant for AI engineering
+- Led end-to-end delivery of AI-assisted loan underwriting automation
+
+
+**Gaps to address.**
+- No explicit iOS platform development experience mentioned
+- Primary RPA tools (UiPath, Power Automate) are not mentioned in job description
+- Job description is vague on specific AI technologies beyond 'AI agents'
+
+
+**Red flags.**
+- No mention of visa sponsorship or relocation support
+- Contract-to-hire model can complicate sponsorship
+- Remote role is US-based, without explicit global hiring
 
 
 
@@ -275,25 +208,25 @@ Thresholds: heuristic >= 0.4, apply-ready >= 0.7.
 
 
 
-- **GEI Consultants**, AI Engineer (0.66): no deep score [link](https://www.adzuna.ca/details/5947003941?utm_medium=api&utm_source=3a0e1b6c)
+- **Qualitest**, AI Engineer (0.66): no deep score [link](https://www.adzuna.com/land/ad/5924333553?se=zvHGDWLj8RGTKt2iX61Xpg&utm_medium=api&utm_source=3a0e1b6c&v=DC82C4A56160F9BE48B785CE5B95A9D35C0C93B2)
 
-- **GEI Consultants**, AI Engineer (0.66): no deep score [link](https://www.adzuna.ca/details/5945717565?utm_medium=api&utm_source=3a0e1b6c)
+- **Qualitest**, AI Engineer (0.66): no deep score [link](https://www.adzuna.com/land/ad/5924333579?se=zvHGDWLj8RGTKt2iX61Xpg&utm_medium=api&utm_source=3a0e1b6c&v=85B2BEB8BEBFC7703092DD4FB3540B022015E3D5)
 
-- **GEI Consultants**, AI Engineer (0.66): no deep score [link](https://www.adzuna.ca/details/5947005639?utm_medium=api&utm_source=3a0e1b6c)
+- **Qualitest**, AI Engineer (0.66): no deep score [link](https://www.adzuna.com/land/ad/5924329496?se=zvHGDWLj8RGTKt2iX61Xpg&utm_medium=api&utm_source=3a0e1b6c&v=912F977C2B632B33DFA94BF0E02C97F05E33173A)
 
-- **Pristinno Technology LLC**, SAP Consultant AI & Intelligent Automation (0.66): no deep score [link](https://www.adzuna.com/land/ad/5934444711?se=XL--Epzi8RGFj9ZV7xwfgA&utm_medium=api&utm_source=3a0e1b6c&v=F85FBB031E5DEA9DD1EB8C1BA7296E5F7B6C0280)
+- **Qualitest**, AI Engineer (0.66): no deep score [link](https://www.adzuna.com/land/ad/5924329581?se=zvHGDWLj8RGTKt2iX61Xpg&utm_medium=api&utm_source=3a0e1b6c&v=B653D4619BD32B8A8802DB4971E57797A477E666)
 
-- **Momento USA LLC**, QA Test Architect – AI & Intelligent Automation (0.66): no deep score [link](https://www.adzuna.com/land/ad/5968299393?se=XL--Epzi8RGFj9ZV7xwfgA&utm_medium=api&utm_source=3a0e1b6c&v=2F8958A4FAB793E38212D229C881A514DDBEDCD2)
+- **Qualitest**, AI Engineer (0.66): no deep score [link](https://www.adzuna.com/land/ad/5924329839?se=zvHGDWLj8RGTKt2iX61Xpg&utm_medium=api&utm_source=3a0e1b6c&v=9E6703F2A934D66E3E606905A6AAEFCCF8C22956)
 
-- **University of Washington**, ERC Intelligent Automation Business Analyst (0.66): no deep score [link](https://www.adzuna.com/land/ad/5890569772?se=XL--Epzi8RGFj9ZV7xwfgA&utm_medium=api&utm_source=3a0e1b6c&v=5242C6DE3C2ED79CE938FC737BB07ED9A32F9FEB)
+- **Qualitest**, AI Engineer (0.66): no deep score [link](https://www.adzuna.com/land/ad/5924329857?se=zvHGDWLj8RGTKt2iX61Xpg&utm_medium=api&utm_source=3a0e1b6c&v=5DA9A30D61CB6C2DCBF6BEA06399F7EAD57CFF68)
 
-- **INSPYR Solutions**, AI Enablement & Intelligent Automation Specialist -CoPilot/Claud (0.66): no deep score [link](https://www.adzuna.com/land/ad/5968048689?se=XL--Epzi8RGFj9ZV7xwfgA&utm_medium=api&utm_source=3a0e1b6c&v=9CF441254DF36EEC6E58535293745EB29685A86F)
+- **Qualitest**, AI Engineer (0.66): no deep score [link](https://www.adzuna.com/land/ad/5924329560?se=zvHGDWLj8RGTKt2iX61Xpg&utm_medium=api&utm_source=3a0e1b6c&v=636368BE9343F91295748CBBC5FD11D6174385F2)
 
-- **K-Tek Resourcing LLC**, Solution Architect (WorkFusion Delivery Role, Java engineering, Intelligent Automation (RPA/ML) architecture , Agile) (0.66): no deep score [link](https://www.adzuna.com/land/ad/5952008106?se=BCdAE5zi8RGXMNRRpZDicQ&utm_medium=api&utm_source=3a0e1b6c&v=77E102CDABAAF29FBD00ED915603FC4F7FE6C3FB)
+- **Qualitest**, AI Engineer (0.66): no deep score [link](https://www.adzuna.com/land/ad/5924329503?se=zvHGDWLj8RGTKt2iX61Xpg&utm_medium=api&utm_source=3a0e1b6c&v=A2D248E87C9B8DFA61C571BC93950C67B4191DC1)
 
-- **Diedre Moire Corp.**, Automation Engineer (0.66): no deep score [link](https://www.adzuna.com/details/5968418369?utm_medium=api&utm_source=3a0e1b6c)
+- **Qualitest**, AI Engineer (0.66): no deep score [link](https://www.adzuna.com/land/ad/5924329486?se=zvHGDWLj8RGTKt2iX61Xpg&utm_medium=api&utm_source=3a0e1b6c&v=814B18ACD03556CCE5B6DD44C8BE8AB8C7A73535)
 
-- **Diedre Moire Corp.**, Automation Engineer (0.66): no deep score [link](https://www.adzuna.com/details/5968420489?utm_medium=api&utm_source=3a0e1b6c)
+- **Qualitest**, AI Engineer (0.66): no deep score [link](https://www.adzuna.com/land/ad/5924329830?se=zvHGDWLj8RGTKt2iX61Xpg&utm_medium=api&utm_source=3a0e1b6c&v=F87A9749C74233FBC6BFBFF8A071EACAD13BFC0D)
 
 
 
@@ -301,18 +234,18 @@ Thresholds: heuristic >= 0.4, apply-ready >= 0.7.
 
 | Source | Status | Count | Duration | Error |
 |--------|--------|-------|----------|-------|
-| greenhouse | FAIL | 0 | 4.41s | GET https://boards-api.greenhouse.io/v1/boards/deel/jobs failed after 3 attempts: Client error '404 Not Found' for url 'https://boards-api.greenhouse.io/v1/boards/deel/jobs?content=true'
+| greenhouse | FAIL | 0 | 4.51s | GET https://boards-api.greenhouse.io/v1/boards/deel/jobs failed after 3 attempts: Client error '404 Not Found' for url 'https://boards-api.greenhouse.io/v1/boards/deel/jobs?content=true'
 For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 |
-| lever | FAIL | 0 | 33.83s | GET https://api.lever.co/v0/postings/figma failed after 3 attempts: Client error '404 Not Found' for url 'https://api.lever.co/v0/postings/figma?mode=json'
+| lever | FAIL | 0 | 28.29s | GET https://api.lever.co/v0/postings/figma failed after 3 attempts: Client error '404 Not Found' for url 'https://api.lever.co/v0/postings/figma?mode=json'
 For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 |
-| ashby | FAIL | 0 | 4.59s | GET https://api.ashbyhq.com/posting-api/job-board/arc failed after 3 attempts: Client error '404 Not Found' for url 'https://api.ashbyhq.com/posting-api/job-board/arc?includeCompensation=true'
+| ashby | FAIL | 0 | 4.43s | GET https://api.ashbyhq.com/posting-api/job-board/arc failed after 3 attempts: Client error '404 Not Found' for url 'https://api.ashbyhq.com/posting-api/job-board/arc?includeCompensation=true'
 For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 |
-| workable | ok | 0 | 0.24s |  |
-| personio | ok | 0 | 0.82s |  |
-| remotive | ok | 16 | 0.66s |  |
-| arbeitnow | ok | 300 | 0.35s |  |
-| adzuna | ok | 1524 | 71.19s |  |
-| hn_whoishiring | ok | 51 | 2.75s |  |
+| workable | ok | 0 | 0.14s |  |
+| personio | ok | 0 | 0.83s |  |
+| remotive | ok | 16 | 0.41s |  |
+| arbeitnow | ok | 300 | 0.31s |  |
+| adzuna | ok | 1520 | 59.5s |  |
+| hn_whoishiring | ok | 51 | 2.82s |  |
 
 
 _This brief was produced by the JobHunt pipeline. It does not submit applications. Verify UK sponsorship claims on the GOV.UK Licensed Sponsor Register before applying._
