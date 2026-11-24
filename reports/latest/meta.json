@@ -1,67 +1,67 @@
 {
-  "run_date": "2026-11-23",
-  "total_fetched": 1889,
-  "total_scored": 23,
-  "heuristic_passed": 449,
-  "gemini_scored": 23,
-  "top_n": 7,
+  "run_date": "2026-11-24",
+  "total_fetched": 1895,
+  "total_scored": 15,
+  "heuristic_passed": 503,
+  "gemini_scored": 15,
+  "top_n": 6,
   "min_heuristic": 0.4,
   "min_final": 0.7,
-  "duration_s": 1287.31,
-  "partial_reason": "time_budget_exceeded after 26/40 LLM scores (elapsed 1287s > budget 1200s)",
+  "duration_s": 1283.46,
+  "partial_reason": "time_budget_exceeded after 19/40 LLM scores (elapsed 1283s > budget 1200s)",
   "sources": {
     "greenhouse": {
       "count": 0,
       "status": "failed",
-      "duration_s": 4.58,
+      "duration_s": 4.59,
       "error": "GET https://boards-api.greenhouse.io/v1/boards/deel/jobs failed after 3 attempts: Client error '404 Not Found' for url 'https://boards-api.greenhouse.io/v1/boards/deel/jobs?content=true'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
     },
     "lever": {
       "count": 0,
       "status": "failed",
-      "duration_s": 5.5,
+      "duration_s": 3.99,
       "error": "GET https://api.lever.co/v0/postings/figma failed after 3 attempts: Client error '404 Not Found' for url 'https://api.lever.co/v0/postings/figma?mode=json'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
     },
     "ashby": {
       "count": 0,
       "status": "failed",
-      "duration_s": 4.23,
+      "duration_s": 4.67,
       "error": "GET https://api.ashbyhq.com/posting-api/job-board/arc failed after 3 attempts: Client error '404 Not Found' for url 'https://api.ashbyhq.com/posting-api/job-board/arc?includeCompensation=true'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
     },
     "workable": {
       "count": 0,
       "status": "ok",
-      "duration_s": 0.13,
+      "duration_s": 0.18,
       "error": null
     },
     "personio": {
       "count": 0,
       "status": "ok",
-      "duration_s": 0.22,
+      "duration_s": 0.09,
       "error": null
     },
     "remotive": {
       "count": 15,
       "status": "ok",
-      "duration_s": 2.26,
+      "duration_s": 0.61,
       "error": null
     },
     "arbeitnow": {
       "count": 300,
       "status": "ok",
-      "duration_s": 1.09,
+      "duration_s": 0.31,
       "error": null
     },
     "adzuna": {
-      "count": 1523,
+      "count": 1529,
       "status": "ok",
-      "duration_s": 102.34,
+      "duration_s": 55.55,
       "error": null
     },
     "hn_whoishiring": {
       "count": 51,
       "status": "ok",
-      "duration_s": 2.21,
+      "duration_s": 2.43,
       "error": null
     }
   }
